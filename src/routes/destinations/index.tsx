@@ -11,7 +11,7 @@ import { Suspense } from "react";
 import DummyDestination from "../../ui/Destination/DummyDestination";
 import Button from "../../ui/Button/Button";
 
-export const Route = createFileRoute("/destinations")({
+export const Route = createFileRoute("/destinations/")({
   component: Index,
 });
 
@@ -51,7 +51,7 @@ function AllDestinations() {
       {destinations
         .sort((a, b) => a.visits[0].localeCompare(b.visits[0]))
         .map((destination) => (
-          <Destination key={destination.id} destination={destination} />
+          <Destination key={destination.id} {...destination} />
         ))}
     </DestinationList>
   );

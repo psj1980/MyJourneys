@@ -82,20 +82,22 @@ export default function Button({
   ...rest
 }: Readonly<ButtonProps>) {
   return (
-    <ReactAriaButton
-      {...rest}
-      className={`
+    <div className="p-1">
+      <ReactAriaButton
+        {...rest}
+        className={`
         px-6 py-3 font-bold rounded-2xl 
         hover:rounded-lg
         focus:outline-none focus:ring-2 focus:ring-offset-2 
         disabled:opacity-50 disabled:cursor-not-allowed 
         transition-all duration-200
-        shadow-sm hover:shadow-lg
+        shadow-sm hover:shadow-lg        
         ${variantStyles[variant]}
         ${sizeStyles[size]}
       `}
-    >
-      {children}
-    </ReactAriaButton>
+      >
+        {children}
+      </ReactAriaButton>
+    </div>
   );
 }

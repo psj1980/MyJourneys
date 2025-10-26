@@ -4,14 +4,6 @@ import Button from "./Button";
 const meta = {
   title: "UI/Components/Button",
   component: Button,
-  parameters: {
-    // docs: {
-    //   description: {
-    //     component:
-    //       "Soft Beach Button component.\n\nVariants: primary, secondary, ghost.\n\nUse the controls to select variant, size, and label. Designed for accessibility and theming with custom colors.",
-    //   },
-    // },
-  },
   argTypes: {
     variant: {
       description: "Button variant",
