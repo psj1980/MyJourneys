@@ -1,0 +1,173 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Pia Jensen",
+      "email": "pia.jensen@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jesper Lund",
+      "email": "jesper.lund@example.com"
+    }
+  ],
+
+  "visits": [
+    {
+      "id": 1,
+      "userId": 1,
+      "destinationId": 2,
+      "date": "2023-06-15",
+      "durationDays": 7
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "destinationId": 3,
+      "date": "2023-07-20",
+      "durationDays": 10
+    }
+  ],
+
+  "destinations": [
+    {
+      "id": 1,
+      "name": "Madeira",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "description": "A beautiful archipelago known for its stunning landscapes, botanical gardens, and hiking trails.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2023-05-15"],
+      "imageUrl": "madeira.jpeg",
+      "rating": 4.7
+    },
+    {
+      "id": 2,
+      "name": "Bali",
+      "country": "Indonesia",
+      "countryCode": "ID",
+      "description": "A popular tourist destination known for its beautiful beaches, rice terraces, and vibrant culture.",
+      "bestTimeToVisit": "April to May and September to October",
+      "visits": ["2024-05-07", "2025-04-21"],
+      "imageUrl": "bali.jpeg",
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "name": "Paris",
+      "country": "France",
+      "countryCode": "FR",
+      "description": "The city of lights and love, known for its art, fashion, and culture.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2024-06-27"],
+      "imageUrl": "paris.jpeg",
+      "rating": 4.9
+    },
+    {
+      "id": 4,
+      "name": "Oranjestad",
+      "country": "Aruba",
+      "countryCode": "AW",
+      "description": "The capital city of Aruba, known for its beautiful beaches and vibrant culture.",
+      "bestTimeToVisit": "September to October",
+      "visits": ["2025-09-14"],
+      "imageUrl": "oranjestad.jpeg",
+      "rating": 4.5
+    },
+    {
+      "id": 5,
+      "name": "Willemstad",
+      "country": "Curacao",
+      "countryCode": "CW",
+      "description": "The capital city of Curacao, known for its colorful Dutch colonial architecture.",
+      "bestTimeToVisit": "September to October",
+      "visits": ["2025-09-19"],
+      "imageUrl": "willemstad.jpeg",
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "name": "Kralendijk",
+      "country": "Bonaire",
+      "countryCode": "BQ",
+      "description": "The capital city of Bonaire, known for its stunning coral reefs and diving spots.",
+      "bestTimeToVisit": "September to October",
+      "visits": ["2025-09-24"],
+      "imageUrl": "kralendijk.jpeg",
+      "rating": 4.7
+    },
+    {
+      "id": 7,
+      "name": "Ystad",
+      "country": "Sverige",
+      "countryCode": "SE",
+      "description": "A charming town in southern Sweden, known for its medieval architecture and beautiful beaches.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2024-11-21"],
+      "imageUrl": "ystad.jpeg",
+      "rating": 4.4
+    },
+    {
+      "id": 8,
+      "name": "Mallorca",
+      "country": "Spain",
+      "countryCode": "ES",
+      "description": "A popular island destination known for its beautiful beaches, vibrant nightlife, and stunning landscapes.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2023-08-12", "2024-08-31"],
+      "imageUrl": "mallorca.jpeg",
+      "rating": 3.6
+    }
+  ],
+
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel Parisian",
+      "destinationId": 1,
+      "rating": 4.5,
+      "pricePerNight": 200,
+      "amenities": ["Free WiFi", "Breakfast Included", "Swimming Pool"]
+    },
+    {
+      "id": 2,
+      "name": "Avila Beach Hotel",
+      "destinationId": 2,
+      "rating": 4.0,
+      "pricePerNight": 150,
+      "amenities": ["Beachfront", "Free Parking", "Spa"]
+    },
+    {
+      "id": 3,
+      "name": "Windcreek Resort",
+      "destinationId": 3,
+      "rating": 4.8,
+      "pricePerNight": 250,
+      "amenities": ["Ocean View", "All-Inclusive", "Fitness Center"]
+    },
+    {
+      "id": 4,
+      "name": "Delfins Beach Resort",
+      "destinationId": 4,
+      "rating": 4.3,
+      "pricePerNight": 180,
+      "amenities": ["Diving Center", "Free WiFi", "Breakfast Included"]
+    },
+    {
+      "id": 5,
+      "name": "London Central Hotel",
+      "destinationId": 5,
+      "rating": 4.6,
+      "pricePerNight": 220,
+      "amenities": ["City Center", "Free WiFi", "Bar"]
+    },
+    {
+      "id": 6,
+      "name": "The Damai",
+      "destinationId": 6,
+      "rating": 4.9,
+      "pricePerNight": 300,
+      "amenities": ["Private Pool", "Beach Access", "Breakfast Included"]
+    }
+  ]
+}
