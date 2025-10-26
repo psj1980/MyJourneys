@@ -48,9 +48,11 @@ function AllDestinations() {
 
   return (
     <DestinationList>
-      {destinations
-        .sort((a, b) => a.visits[0].localeCompare(b.visits[0]))
-        .map((destination) => (
+      {[...destinations]
+        .sort((a: DestinationType, b: DestinationType) =>
+          a.visits[0].localeCompare(b.visits[0])
+        )
+        .map((destination: DestinationType) => (
           <Destination key={destination.id} {...destination} />
         ))}
     </DestinationList>
