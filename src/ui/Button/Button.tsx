@@ -1,17 +1,11 @@
+import "./Button.css";
+
 import {
   Button as ReactAriaButton,
   type ButtonProps as ReactAriaButtonProps,
 } from "react-aria-components";
-
-/**
- * Variant types for the Button component.
- */
-type Variant = "primary" | "secondary" | "outline" | "crazy";
-
-/**
- * Size types for the Button component.
- */
-type Size = "small" | "medium" | "large";
+import Spinner from "../Spinner/Spinner";
+import type { Variant, Size } from "../../types/component";
 
 export type ButtonProps = Omit<
   ReactAriaButtonProps,
@@ -23,45 +17,21 @@ export type ButtonProps = Omit<
 };
 
 const variantStyles: Record<Variant, string> = {
-  primary: `
-    bg-primary
-    text-secondary-text
-    hover:bg-primary-hover
-    focus:ring-primary-active
-  `,
-  secondary: `
-    bg-secondary
-    text-primary-text
-    hover:bg-secondary-hover
-    focus:ring-secondary-active
-  `,
-  outline: `
-    bg-ghost
-    text-ghost-text
-    outline-2 border-ghost-text
-    hover:border-ghost-hover
-    hover:text-ghost-hover
-    focus:ring-ghost-active
-  `,
-  crazy: `
-    bg-gradient-to-r from-primary to-secondary    
-    text-secondary-text
-    hover:bg-gradient-to-l from-primary to-secondary    
-    focus:ring-secondary
-  `,
+  primary: "btn-primary",
+  secondary: "btn-secondary",
+  outline: "btn-outline",
 };
 
 const sizeStyles: Record<Size, string> = {
-  small: "text-sm",
-  medium: "text-base",
-  large: "text-lg",
+  small: "text-sm px-3 py-1.5 gap-2",
+  medium: "text-base px-5 py-2.5 gap-4",
+  large: "text-lg px-7 py-3.5 gap-5",
 };
 
 /**
  * Renders a styled button using react-aria-components.
  *
  * @remarks
- * - Uses Tailwind CSS for styling.
  * - Supports variants: 'primary', 'secondary', 'outline', 'crazy'.
  * - Supports sizes: 'small', 'medium', 'large'.
  *
@@ -82,22 +52,18 @@ export default function Button({
   ...rest
 }: Readonly<ButtonProps>) {
   return (
-    <div className="p-1">
-      <ReactAriaButton
-        {...rest}
-        className={`
-        px-6 py-3 font-bold rounded-2xl 
-        hover:rounded-lg
-        focus:outline-none focus:ring-2 focus:ring-offset-2 
-        disabled:opacity-50 disabled:cursor-not-allowed 
-        transition-all duration-200
-        shadow-sm hover:shadow-lg        
-        ${variantStyles[variant]}
+    <ReactAriaButton
+      className={`
+        btn
+        m-1
+        inline-flex items-center justify-center position-relative overflow-hidden
+        font-medium cursor-pointer transition-all duration-200 rounded-md        
         ${sizeStyles[size]}
-      `}
-      >
-        {children}
-      </ReactAriaButton>
-    </div>
+        ${variantStyles[variant]}`}
+      {...rest}
+    >
+      {rest.isPending && <Spinner size={size} />}
+      {children}
+    </ReactAriaButton>
   );
 }
