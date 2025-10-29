@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Beach Button Design</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="soft_beach_theme.css">
+    
+    <style>
+        /* Additional custom styles */
+        .demo-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #fef3f2 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(162, 128, 137, 0.1);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        /* Loading animation */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-icon {
+            animation: spin 1s linear infinite;
+        }
+        
+        /* Gradient animation */
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .btn-primary {
+            background-size: 200% 200% !important;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        /* Interactive demo styles */
+        .interactive-demo {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .ripple-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            border-radius: var(--radius);
+            pointer-events: none;
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: rippleEffect 0.6s ease-out;
+        }
+        
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Soft Beach Button Design</h1>
+            <p class="text-lg text-gray-600">A collection of beautiful buttons inspired by soft beach aesthetics</p>
+        </header>
+        
+        <!-- Primary Buttons Section -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Primary Buttons</h2>
+            <div class="demo-grid">
+                <button class="btn btn-primary btn-md">Default</button>
+                <button class="btn btn-primary btn-md hover">Hover</button>
+                <button class="btn btn-primary btn-md active">Active</button>
+                <button class="btn btn-primary btn-md focus" tabindex="0">Focus</button>
+                <button class="btn btn-primary btn-md" disabled>Disabled</button>
+            </div>
+        </section>
+        
+        <!-- Secondary Buttons Section -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Secondary Buttons</h2>
+            <div class="demo-grid">
+                <button class="btn btn-secondary btn-md">Default</button>
+                <button class="btn btn-secondary btn-md hover">Hover</button>
+                <button class="btn btn-secondary btn-md active">Active</button>
+                <button class="btn btn-secondary btn-md focus" tabindex="0">Focus</button>
+                <button class="btn btn-secondary btn-md" disabled>Disabled</button>
+            </div>
+        </section>
+        
+        <!-- Outline Buttons Section -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Outline Buttons</h2>
+            <div class="demo-grid">
+                <button class="btn btn-outline btn-md">Default</button>
+                <button class="btn btn-outline btn-md hover">Hover</button>
+                <button class="btn btn-outline btn-md active">Active</button>
+                <button class="btn btn-outline btn-md focus" tabindex="0">Focus</button>
+                <button class="btn btn-outline btn-md" disabled>Disabled</button>
+            </div>
+        </section>
+        
+        <!-- Size Variations Section -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Size Variations</h2>
+            <div class="flex items-center gap-4 flex-wrap">
+                <button class="btn btn-primary btn-sm">Small</button>
+                <button class="btn btn-primary btn-md">Medium</button>
+                <button class="btn btn-primary btn-lg">Large</button>
+            </div>
+            <div class="flex items-center gap-4 flex-wrap mt-4">
+                <button class="btn btn-secondary btn-sm">Small</button>
+                <button class="btn btn-secondary btn-md">Medium</button>
+                <button class="btn btn-secondary btn-lg">Large</button>
+            </div>
+            <div class="flex items-center gap-4 flex-wrap mt-4">
+                <button class="btn btn-outline btn-sm">Small</button>
+                <button class="btn btn-outline btn-md">Medium</button>
+                <button class="btn btn-outline btn-lg">Large</button>
+            </div>
+        </section>
+        
+        <!-- Buttons with Icons Section -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Buttons with Icons</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn btn-primary btn-md">
+                    <i data-lucide="arrow-left" class="btn-icon"></i>
+                    Previous
+                </button>
+                <button class="btn btn-primary btn-md">
+                    Next
+                    <i data-lucide="arrow-right" class="btn-icon"></i>
+                </button>
+                <button class="btn btn-secondary btn-md">
+                    <i data-lucide="download" class="btn-icon"></i>
+                    Download
+                </button>
+                <button class="btn btn-secondary btn-md">
+                    <i data-lucide="heart" class="btn-icon"></i>
+                    Like
+                </button>
+                <button class="btn btn-outline btn-md">
+                    <i data-lucide="share-2" class="btn-icon"></i>
+                    Share
+                </button>
+                <button class="btn btn-outline btn-md">
+                    <i data-lucide="bookmark" class="btn-icon"></i>
+                    Save
+                </button>
+            </div>
+        </section>
+        
+        <!-- Interactive Demo Section -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Interactive Demo</h2>
+            <p class="text-gray-600 mb-4">Click the buttons below to see the ripple effect and animations</p>
+            <div class="flex flex-wrap gap-4">
+                <div class="interactive-demo">
+                    <button class="btn btn-primary btn-md ripple-btn">
+                        Click Me
+                    </button>
+                    <div class="ripple-container"></div>
+                </div>
+                <div class="interactive-demo">
+                    <button class="btn btn-secondary btn-md ripple-btn">
+                        Click Me Too
+                    </button>
+                    <div class="ripple-container"></div>
+                </div>
+                <button class="btn btn-primary btn-md" id="loadingBtn">
+                    <span class="btn-text">Submit</span>
+                    <i data-lucide="loader-2" class="btn-icon loading-icon hidden"></i>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Color Palette Reference -->
+        <section class="demo-section">
+            <h2 class="text-2xl font-semibold mb-6">Color Palette</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="text-center">
+                    <div class="w-full h-20 rounded-lg mb-2" style="background-color: #51e2f5;"></div>
+                    <p class="text-sm font-medium">Bright Blue</p>
+                    <p class="text-xs text-gray-500">#51e2f5</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 rounded-lg mb-2" style="background-color: #9df9ef;"></div>
+                    <p class="text-sm font-medium">Blue Green</p>
+                    <p class="text-xs text-gray-500">#9df9ef</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 rounded-lg mb-2" style="background-color: #edf7f6;"></div>
+                    <p class="text-sm font-medium">Dusty White</p>
+                    <p class="text-xs text-gray-500">#edf7f6</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 rounded-lg mb-2" style="background-color: #ffa8b6;"></div>
+                    <p class="text-sm font-medium">Pink Sand</p>
+                    <p class="text-xs text-gray-500">#ffa8b6</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 rounded-lg mb-2" style="background-color: #a28089;"></div>
+                    <p class="text-sm font-medium">Dark Sand</p>
+                    <p class="text-xs text-gray-500">#a28089</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Ripple effect
+        document.querySelectorAll('.ripple-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rippleContainer = this.parentElement.querySelector('.ripple-container');
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                rippleContainer.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Loading button demo
+        const loadingBtn = document.getElementById('loadingBtn');
+        const btnText = loadingBtn.querySelector('.btn-text');
+        const loadingIcon = loadingBtn.querySelector('.loading-icon');
+        
+        loadingBtn.addEventListener('click', function() {
+            btnText.textContent = 'Loading';
+            loadingIcon.classList.remove('hidden');
+            loadingBtn.disabled = true;
+            
+            setTimeout(() => {
+                btnText.textContent = 'Submit';
+                loadingIcon.classList.add('hidden');
+                loadingBtn.disabled = false;
+            }, 2000);
+        });
+        
+        // Add hover class on mouse enter for demo purposes
+        document.querySelectorAll('.hover').forEach(el => {
+            el.classList.add('btn-primary:hover', 'btn-secondary:hover', 'btn-outline:hover');
+        });
+        
+        // Add active class for demo purposes
+        document.querySelectorAll('.active').forEach(el => {
+            el.classList.add('btn-primary:active', 'btn-secondary:active', 'btn-outline:active');
+        });
+        
+        // Add focus class for demo purposes
+        document.querySelectorAll('.focus').forEach(el => {
+            el.classList.add('btn-primary:focus', 'btn-secondary:focus', 'btn-outline:focus');
+            el.focus();
+        });
+    </script>
+</body>
+</html>
