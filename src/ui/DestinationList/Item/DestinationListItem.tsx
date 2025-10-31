@@ -1,4 +1,4 @@
-import { type Destination } from "../../types/destination";
+import { type Destination } from "../../../types/destination";
 
 export type DestinationProps = Destination;
 
@@ -21,7 +21,7 @@ export type DestinationProps = Destination;
  *
  * @returns The rendered destination component.
  */
-export default function Destination({
+export default function DestinationListItem({
   name,
   country,
   description,
@@ -34,7 +34,8 @@ export default function Destination({
       className="flex flex-col justify-between items-center 
     border border-border 
     p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow bg-white
-    dark:bg-soft-beach-dark-sand-700 dark:border-neutral-600 dark:text-secondary-text"
+
+    dark:bg-neutral-600 dark:border-neutral-700 dark:hover:shadow-neutral-800"
     >
       {imageUrl && (
         <img

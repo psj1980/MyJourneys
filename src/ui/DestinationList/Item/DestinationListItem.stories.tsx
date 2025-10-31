@@ -1,15 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Destination, { type DestinationProps } from "./Destination";
+import DestinationListItem, {
+  type DestinationProps,
+} from "./DestinationListItem";
 
-const meta: Meta<typeof Destination> = {
-  title: "UI/Components/Destination",
-  component: Destination,
+const meta: Meta<typeof DestinationListItem> = {
+  title: "UI/Components/DestinationList/Item",
+  component: DestinationListItem,
   tags: ["autodocs"],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Destination>;
+type Story = StoryObj<typeof DestinationListItem>;
 
 const exampleProps: DestinationProps = {
   id: 1,

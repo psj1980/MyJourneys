@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import DestinationList from "./DestinationList";
-import Destination from "./Destination";
-import DummyDestination from "./DummyDestination";
+import DestinationListItem from "./Item/DestinationListItem";
+import DestinationListDummyItem from "./ItemDummy/DestinationListDummyItem";
 
 const meta: Meta<typeof DestinationList> = {
   title: "UI/Components/DestinationList",
@@ -15,7 +15,7 @@ type Story = StoryObj<typeof DestinationList>;
 
 const Destinations = (
   <>
-    <Destination
+    <DestinationListItem
       id={1}
       name="Paris"
       country="France"
@@ -24,7 +24,7 @@ const Destinations = (
       bestTimeToVisit="April to June and October to early November"
       visits={["2022-05-15", "2023-09-10"]}
     />
-    <Destination
+    <DestinationListItem
       id={1}
       name="Paris"
       country="France"
@@ -33,7 +33,7 @@ const Destinations = (
       bestTimeToVisit="April to June and October to early November"
       visits={["2022-05-15", "2023-09-10"]}
     />
-    <Destination
+    <DestinationListItem
       id={1}
       name="Paris"
       country="France"
@@ -42,7 +42,7 @@ const Destinations = (
       bestTimeToVisit="April to June and October to early November"
       visits={["2022-05-15", "2023-09-10"]}
     />
-    <Destination
+    <DestinationListItem
       id={1}
       name="Paris"
       country="France"
@@ -62,7 +62,7 @@ export const Default: Story = {
 
 const Dummies = Array.from({ length: 5 }).map(() => {
   const uniqueKey = crypto.randomUUID();
-  return <DummyDestination key={uniqueKey} />;
+  return <DestinationListDummyItem key={uniqueKey} />;
 });
 
 export const DummyDestinations: Story = {

@@ -4,7 +4,7 @@
  *
  * @returns React component with dummy destination
  */
-export default function DummyDestination() {
+export default function DestinationListDummyItem() {
   return (
     <div className="flex flex-col justify-between items-center border border-gray-200 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow bg-white">
       <img
