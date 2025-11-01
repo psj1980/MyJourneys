@@ -9,7 +9,6 @@
 ## 2. Type Safety
 
 - Always type props and state.
-- Use `React.FC<Props>` for component props.
 - Prefer explicit types over `any`.
 
 ## 3. File Naming

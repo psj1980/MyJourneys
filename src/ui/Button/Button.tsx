@@ -1,11 +1,9 @@
-import "./Button.css";
-
 import {
   Button as ReactAriaButton,
   type ButtonProps as ReactAriaButtonProps,
 } from "react-aria-components";
+import type { Size, Variant } from "../../types/component";
 import Spinner from "../Spinner/Spinner";
-import type { Variant, Size } from "../../types/component";
 
 export type ButtonProps = Omit<
   ReactAriaButtonProps,
@@ -17,9 +15,23 @@ export type ButtonProps = Omit<
 };
 
 const variantStyles: Record<Variant, string> = {
-  primary: "btn-primary",
-  secondary: "btn-secondary",
-  outline: "btn-outline",
+  primary: `dark:bg-none dark:bg-[oklch(0.922_0_0)] dark:text-[oklch(0.205 0 0)]
+            dark:hover:bg-none dark:hover:bg-[rgba(236,236,236,0.9)]
+            text-black-soft shadow-sm
+            bg-[linear-gradient(135deg,var(--color-theme-one)_0%,var(--color-theme-two)_100%)]
+            hover:bg-[linear-gradient(135deg,var(--color-theme-two)_0%,var(--color-theme-one)_100%)]
+            active:shadow-xs
+            focus:shadow-focus
+            disabled:bg-none`,
+  secondary: `bg-theme-four text-black-soft shadow-sm
+              hover:bg-destructive hover:shadow-md
+              active:shadow-xs
+              focus:shadow-focus-secondary`,
+  outline: `dark:border-1 dark:disabled-shadow-none
+            shadow-none bg-transparent text-theme-one border-2 border-theme-one     
+            hover:bg-theme-one hover:text-black-soft hover:shadow-sm
+            disabled:hover:shadow-sm
+            focus:shadow-focus active:shadow-none`,
 };
 
 const sizeStyles: Record<Size, string> = {
@@ -54,10 +66,19 @@ export default function Button({
   return (
     <ReactAriaButton
       className={`
-        btn
-        m-1
-        inline-flex items-center justify-center position-relative overflow-hidden
-        font-medium cursor-pointer transition-all duration-200 rounded-md        
+        cursor:pointer outline-none text-decoration-none white-space-nowrap
+        m-1 inline-flex items-center justify-center position-relative overflow-hidden
+        font-medium cursor-pointer transition-all duration-200 rounded-md 
+        before:content-[''] before:absolute before:top-1/2 before:left-1/2
+        before:w-0 before:h-0 before:rounded-full 
+        before:bg-white/50 before:-translate-x-1/2 before:-translate-y-1/2 
+        before:transition-width before:transition-height before:duration-600 
+        active:translate-y-0 disabled:shadow-none
+        active:before:w-[300px] active:before:h-[300px]
+        hover:-translate-y-0.5
+        disabled:translate-y-0
+        disabled:cursor-not-allowed disabled:border-none 
+        disabled:text-muted-foreground disabled:bg-muted        
         ${sizeStyles[size]}
         ${variantStyles[variant]}`}
       {...rest}

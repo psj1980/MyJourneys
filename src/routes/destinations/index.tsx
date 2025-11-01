@@ -1,15 +1,15 @@
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import DestinationList from "../../ui/Destination/DestinationList";
-import Destination from "../../ui/Destination/Destination";
+import { Suspense } from "react";
 import {
   DestinationSchema,
   type Destination as DestinationType,
 } from "../../types/destination";
-import { environment } from "../../utils/environment";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { Suspense } from "react";
-import DummyDestination from "../../ui/Destination/DummyDestination";
 import Button from "../../ui/Button/Button";
+import DestinationList from "../../ui/DestinationList/DestinationList";
+import DestinationListItem from "../../ui/DestinationList/Item/DestinationListItem";
+import DestinationListDummyItem from "../../ui/DestinationList/ItemDummy/DestinationListDummyItem";
+import { environment } from "../../utils/environment";
 
 export const Route = createFileRoute("/destinations/")({
   component: Index,
@@ -18,13 +18,13 @@ export const Route = createFileRoute("/destinations/")({
 function Index() {
   return (
     <>
-      <Button variant="secondary">Explore Now</Button>
+      <Button variant="primary">Explore Now</Button>
       <Suspense
         fallback={
           <DestinationList>
             {Array.from({ length: 5 }).map(() => {
               const uniqueKey = crypto.randomUUID();
-              return <DummyDestination key={uniqueKey} />;
+              return <DestinationListDummyItem key={uniqueKey} />;
             })}
           </DestinationList>
         }
@@ -53,7 +53,7 @@ function AllDestinations() {
           a.visits[0].localeCompare(b.visits[0])
         )
         .map((destination: DestinationType) => (
-          <Destination key={destination.id} {...destination} />
+          <DestinationListItem key={destination.id} {...destination} />
         ))}
     </DestinationList>
   );
