@@ -15,6 +15,7 @@
     "start:all": "concurrently \"bun run dev\" \"bun run start:api\" \"storybook dev -p 6006\""
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.35.0",
     "@tailwindcss/vite": "^4.1.14",
     "@tanstack/react-query": "^5.90.5",
     "@tanstack/react-router": "^1.133.28",

@@ -1,22 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import Button from "./Button";
+import { IconArrowLeft } from "@tabler/icons-react";
 
 const meta = {
   title: "UI/Components/Button",
   component: Button,
-  parameters: {
-    // docs: {
-    //   description: {
-    //     component:
-    //       "Soft Beach Button component.\n\nVariants: primary, secondary, ghost.\n\nUse the controls to select variant, size, and label. Designed for accessibility and theming with custom colors.",
-    //   },
-    // },
-  },
   argTypes: {
     variant: {
       description: "Button variant",
       control: { type: "radio" },
-      options: ["primary", "secondary", "outline", "crazy"],
+      options: ["primary", "secondary", "outline"],
     },
     size: {
       description: "Button size",
@@ -26,6 +19,14 @@ const meta = {
     children: {
       control: { type: "text" },
       defaultValue: "Button",
+    },
+    isPending: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    },
+    isDisabled: {
+      control: { type: "boolean" },
+      defaultValue: false,
     },
   },
 } satisfies Meta<typeof Button>;
@@ -55,10 +56,15 @@ export const Outline: Story = {
   },
 };
 
-export const Crazy: Story = {
+export const WithIcon: Story = {
   args: {
-    children: "Button",
-    variant: "crazy",
+    children: (
+      <>
+        <IconArrowLeft />
+        Button
+      </>
+    ),
+    variant: "primary",
   },
 };
 

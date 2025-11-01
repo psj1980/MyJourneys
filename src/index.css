@@ -1,155 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  --color-theme-black: #0b090a;
-  --color-theme-black-light: #161a1d;
-  --color-theme-red-deep-dark: #660708;
-  --color-theme-red-dark: #a4161a;
-  --color-theme-red: #ba181b;
-  --color-theme-red-light: #e5383b;
-  --color-theme-grey-dark: #b1a7a6;
-  --color-theme-grey: #d3d3d3;
-  --color-theme-grey-light: #f5f3f4;
-  --color-theme-white: #ffffff;
+  /* Soft Beach Color Palette */
+  --color-soft-beach-bright-blue: #51e2f5;
+  --color-soft-beach-blue-green: #9df9ef;
+  --color-soft-beach-dusty-white: #edf7f6;
+  --color-soft-beach-pink-sand: #ffa8b6;
+  --color-soft-beach-dark-sand: #a28089;
+  --color-black-soft: #2c2c2c;
+  --color-black-darker: #1a1a1a;
+  --color-white: #ffffff;
+  --color-white-smoke: #f5f5f5;
+  --color-white-border: #e0e0e0;
+  --color-soft-beach-muted-gray: #6b6b6b;
+  --color-soft-beach-bright-coral: #ff6b6b;
 
-  --color-soft-beach-bright-blue-100: #e0fafd;
-  --color-soft-beach-bright-blue-200: #b3f2fa;
-  --color-soft-beach-bright-blue-300: #80e8f7;
-  --color-soft-beach-bright-blue-400: #4ddcf3;
-  --color-soft-beach-bright-blue-500: #51e2f5; /* same as base */
-  --color-soft-beach-bright-blue-600: #2bb7c7;
-  --color-soft-beach-bright-blue-700: #1e8a97;
-  --color-soft-beach-bright-blue-800: #155e66;
-  --color-soft-beach-bright-blue-900: #0b3236;
+  --color-theme-one: var(--color-soft-beach-bright-blue);
+  --color-theme-two: var(--color-soft-beach-blue-green);
+  --color-theme-three: var(--color-soft-beach-dusty-white);
+  --color-theme-four: var(--color-soft-beach-pink-sand);
+  --color-theme-five: var(--color-soft-beach-dark-sand);
 
-  --color-soft-beach-blue-green-100: #e6fcfa;
-  --color-soft-beach-blue-green-200: #c2f9f3;
-  --color-soft-beach-blue-green-300: #9df9ef; /* same as base*/
-  --color-soft-beach-blue-green-400: #6beee2;
-  --color-soft-beach-blue-green-500: #3ae3d6;
-  --color-soft-beach-blue-green-600: #1ac7bb;
-  --color-soft-beach-blue-green-700: #139e94;
-  --color-soft-beach-blue-green-800: #0b6b65;
-  --color-soft-beach-blue-green-900: #073a36;
-
-  --color-soft-beach-dusty-white-100: #f8fbfa;
-  --color-soft-beach-dusty-white-200: #f3f9f8;
-  --color-soft-beach-dusty-white-300: #f0f8f7;
-  --color-soft-beach-dusty-white-400: #edf7f6; /* base */
-  --color-soft-beach-dusty-white-500: #e6f2f1;
-  --color-soft-beach-dusty-white-600: #dfeceb;
-  --color-soft-beach-dusty-white-700: #d7e6e5;
-  --color-soft-beach-dusty-white-800: #cfdedc;
-  --color-soft-beach-dusty-white-900: #c7d6d4;
-
-  --color-soft-beach-pink-sand-100: #ffe5eb;
-  --color-soft-beach-pink-sand-200: #ffcdd7;
-  --color-soft-beach-pink-sand-300: #ffb6c3;
-  --color-soft-beach-pink-sand-400: #ff9eaf;
-  --color-soft-beach-pink-sand-500: #ffa8b6; /* base */
-  --color-soft-beach-pink-sand-600: #e08fa0;
-  --color-soft-beach-pink-sand-700: #b86f7e;
-  --color-soft-beach-pink-sand-800: #8f4f5c;
-  --color-soft-beach-pink-sand-900: #66303a;
-
-  --color-soft-beach-dark-sand-100: #f3e9ea;
-  --color-soft-beach-dark-sand-200: #e3cfd2;
-  --color-soft-beach-dark-sand-300: #d3b5bb;
-  --color-soft-beach-dark-sand-400: #c39ba3;
-  --color-soft-beach-dark-sand-500: #b3818b;
-  --color-soft-beach-dark-sand-600: #a28089; /* base */
-  --color-soft-beach-dark-sand-700: #8c6c74;
-  --color-soft-beach-dark-sand-800: #75575e;
-  --color-soft-beach-dark-sand-900: #5e4349;
-
-  /* Purple 90 - Ice Cold */
-  --color-purple-90-ice-cold-100: #eaf7fc;
-  --color-purple-90-ice-cold-200: #d4eefd;
-  --color-purple-90-ice-cold-300: #bfe6fa;
-  --color-purple-90-ice-cold-400: #a9ddf7;
-  --color-purple-90-ice-cold-500: #a0d2eb; /* base */
-  --color-purple-90-ice-cold-600: #7bb0c5;
-  --color-purple-90-ice-cold-700: #568e9f;
-  --color-purple-90-ice-cold-800: #326c79;
-  --color-purple-90-ice-cold-900: #0d4a53;
-
-  /* Purple 90 - Freeze Purple */
-  --color-purple-90-freeze-purple-100: #f8f9fc;
-  --color-purple-90-freeze-purple-200: #f1f3fa;
-  --color-purple-90-freeze-purple-300: #eaf0f7;
-  --color-purple-90-freeze-purple-400: #e5eaf5; /* base */
-  --color-purple-90-freeze-purple-500: #d6dbe8;
-  --color-purple-90-freeze-purple-600: #c7ccdb;
-  --color-purple-90-freeze-purple-700: #b8bdce;
-  --color-purple-90-freeze-purple-800: #a9aec1;
-  --color-purple-90-freeze-purple-900: #9a9fb4;
-
-  /* Purple 90 - Medium Purple */
-  --color-purple-90-medium-purple-100: #f3eafd;
-  --color-purple-90-medium-purple-200: #e7d5fa;
-  --color-purple-90-medium-purple-300: #dbbff7;
-  --color-purple-90-medium-purple-400: #cfaaef;
-  --color-purple-90-medium-purple-500: #d0bdf4; /* base */
-  --color-purple-90-medium-purple-600: #b09ed1;
-  --color-purple-90-medium-purple-700: #9070ae;
-  --color-purple-90-medium-purple-800: #70418b;
-  --color-purple-90-medium-purple-900: #502368;
-
-  /* Purple 90 - Purple Pain */
-  --color-purple-90-purple-pain-100: #e9e1f3;
-  --color-purple-90-purple-pain-200: #d3c3e7;
-  --color-purple-90-purple-pain-300: #bda5db;
-  --color-purple-90-purple-pain-400: #a787cf;
-  --color-purple-90-purple-pain-500: #8458b3; /* base */
-  --color-purple-90-purple-pain-600: #6a4690;
-  --color-purple-90-purple-pain-700: #50346d;
-  --color-purple-90-purple-pain-800: #36224a;
-  --color-purple-90-purple-pain-900: #1c1027;
-
-  /* Purple 90 - Heavy Purple */
-  --color-purple-90-heavy-purple-100: #f3e9ea;
-  --color-purple-90-heavy-purple-200: #e3cfd2;
-  --color-purple-90-heavy-purple-300: #d3b5bb;
-  --color-purple-90-heavy-purple-400: #c39ba3;
-  --color-purple-90-heavy-purple-500: #b3818b;
-  --color-purple-90-heavy-purple-600: #a28089; /* base */
-  --color-purple-90-heavy-purple-700: #8c6c74;
-  --color-purple-90-heavy-purple-800: #75575e;
-  --color-purple-90-heavy-purple-900: #5e4349;
-
-  /* --color-tema-1: #726eff;
-  --color-tema-2: #5affe7;
-  --color-tema-3: #08c6ab;
-  --color-tema-4: #37465b;
-  --color-tema-5: #212b38; */
-
-  --color-primary: var(--color-soft-beach-bright-blue-600);
-  --color-primary-hover: var(--color-soft-beach-bright-blue-700);
-  --color-primary-active: var(--color-soft-beach-bright-blue-500);
-  --color-primary-text: var(--color-soft-beach-dark-sand-900);
-
-  --color-secondary: var(--color-soft-beach-pink-sand-500);
-  --color-secondary-hover: var(--color-soft-beach-pink-sand-300);
-  --color-secondary-active: var(--color-soft-beach-pink-sand-400);
-  --color-secondary-text: var(--color-soft-beach-dusty-white-200);
-
-  --color-ghost: var(--color-soft-beach-dusty-white-100);
-  --color-ghost-hover: var(--color-primary-hover);
-  --color-ghost-active: var(--color-primary-active);
-  --color-ghost-text: var(--color-primary);
-
-  --color-background-dark: #3e3e42;
-  --color-background-light: #ffffff;
-
+  --color-foreground: var(--color-black-soft);
+  --color-foreground-dark: var(--color-black-darker);
+  --color-border: var(--color-white-border);
+  --color-muted: var(--color-white-smoke);
+  --color-muted-foreground: var(--color-soft-beach-muted-gray);
+  --color-destructive: var(--color-soft-beach-bright-coral);
   --color-border: var(--color-gray-200);
-  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Focus Ring Shadow */
+  --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.5);
+  --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.5);
+  --color-background: #ffffff;
+
+  /* Theme fonts */
+  --font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --font-sans: "Inter", "Roboto", sans-serif;
+  --font-serif: "Merriweather", serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--text-base--line-height);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-foreground);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -157,14 +56,27 @@
 
   /* Set global background color for light and dark mode */
   body {
-    background-color: var(--color-background-light);
-    color: var(--color-primary-text);
+    background-color: var(--color-background);
+    color: var(--color-black-soft);
   }
 
   @media (prefers-color-scheme: dark) {
+    /* Dark mode overrides for button theme variables */
+    /* --color-theme-one: var(--color-black-darker);
+    --color-theme-two: #3e3e42; */
+    --color-theme-three: var(--color-soft-beach-muted-gray);
+    --color-theme-four: var(--color-soft-beach-bright-coral);
+    --color-theme-five: var(--color-soft-beach-dusty-white);
+    --color-foreground: var(--color-white-smoke);
+    --color-muted: var(--color-black-soft);
+    --color-muted-foreground: var(--color-soft-beach-dark-sand);
+    --color-destructive: #ff95a5;
+    --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.3);
+    --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.3);
+    --color-background: #3e3e42;
+
     body {
-      background-color: var(--color-background-dark);
-      color: var(--color-secondary-text);
+      color: #f5f5f5;
     }
   }
 }

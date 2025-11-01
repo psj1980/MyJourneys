@@ -9,7 +9,6 @@
 ## 2. Type Safety
 
 - Always type props and state.
-- Use `React.FC<Props>` for component props.
 - Prefer explicit types over `any`.
 
 ## 3. File Naming
@@ -36,7 +35,24 @@
 ## 7. Documentation
 
 - Add JSDoc comments for complex functions and components.
-- Document prop types and expected values.
+- Document prop types and expected values like this:
+
+  ```tsx
+  /**
+   * Button component props
+   *
+   * @remarks This is a button component used for user interactions. (this is optional)
+   *
+   * @param label - The text to display on the button
+   *
+   * @param onClick - Click event handler
+   *
+   * @returns A button element
+   */
+  export default function Button({ label, onClick }: ButtonProps) {
+    ...
+  };
+  ```
 
 ## 8. Error Handling
 
