@@ -6,9 +6,5 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  return (
-    <main className="min-h-screen p-8 space-y-8">
-      <ForsideContent />
-    </main>
-  );
+  return <ForsideContent />;
 }

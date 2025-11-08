@@ -7,13 +7,16 @@
   --color-soft-beach-dusty-white: #edf7f6;
   --color-soft-beach-pink-sand: #ffa8b6;
   --color-soft-beach-dark-sand: #a28089;
+  --color-soft-beach-muted-gray: #6b6b6b;
+  --color-soft-beach-bright-coral: #ff6b6b;
+  --color-soft-beach-light-coral: #ff95a5;
+
   --color-black-soft: #2c2c2c;
   --color-black-darker: #1a1a1a;
+  --color-charcoal-gray: #3e3e42;
   --color-white: #ffffff;
   --color-white-smoke: #f5f5f5;
   --color-white-border: #e0e0e0;
-  --color-soft-beach-muted-gray: #6b6b6b;
-  --color-soft-beach-bright-coral: #ff6b6b;
 
   --color-theme-one: var(--color-soft-beach-bright-blue);
   --color-theme-two: var(--color-soft-beach-blue-green);
@@ -23,16 +26,20 @@
 
   --color-foreground: var(--color-black-soft);
   --color-foreground-dark: var(--color-black-darker);
-  --color-border: var(--color-white-border);
   --color-muted: var(--color-white-smoke);
   --color-muted-foreground: var(--color-soft-beach-muted-gray);
   --color-destructive: var(--color-soft-beach-bright-coral);
   --color-border: var(--color-gray-200);
+  --color-background: var(--color-white-smoke);
 
   /* Focus Ring Shadow */
-  --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.5);
-  --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.5);
-  --color-background: #ffffff;
+  --shadow-focus-light-blue: 0 0 0 3px rgba(81, 226, 245, 0.3);
+  --shadow-focus-light-pink: 0 0 0 3px rgba(255, 168, 182, 0.3);
+  --shadow-focus-bright-blue: 0 0 0 3px rgba(81, 226, 245, 0.5);
+  --shadow-focus-soft-pink: 0 0 0 3px rgba(255, 168, 182, 0.5);
+
+  --shadow-focus: var(--shadow-focus-bright-blue);
+  --shadow-focus-secondary: var(--shadow-focus-soft-pink);
 
   /* Theme fonts */
   --font-family:
@@ -44,39 +51,33 @@
 }
 
 :root {
+  /* Set global background color for light and dark mode */
   font-family: var(--font-sans);
   font-size: var(--text-base);
   line-height: var(--text-base--line-height);
   font-weight: var(--font-weight-normal);
+  background-color: var(--color-background);
   color: var(--color-foreground);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Set global background color for light and dark mode */
-  body {
-    background-color: var(--color-background);
-    color: var(--color-black-soft);
-  }
-
   @media (prefers-color-scheme: dark) {
     /* Dark mode overrides for button theme variables */
-    /* --color-theme-one: var(--color-black-darker);
-    --color-theme-two: #3e3e42; */
+    --color-theme-one: var(--color-soft-beach-dark-sand);
+    --color-theme-two: var(--color-soft-beach-blue-green);
     --color-theme-three: var(--color-soft-beach-muted-gray);
     --color-theme-four: var(--color-soft-beach-bright-coral);
     --color-theme-five: var(--color-soft-beach-dusty-white);
     --color-foreground: var(--color-white-smoke);
     --color-muted: var(--color-black-soft);
     --color-muted-foreground: var(--color-soft-beach-dark-sand);
-    --color-destructive: #ff95a5;
-    --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.3);
-    --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.3);
-    --color-background: #3e3e42;
-
-    body {
-      color: #f5f5f5;
-    }
+    --color-destructive: var(--color-soft-beach-light-coral);
+    --shadow-focus: var(--shadow-focus-light-blue);
+    --shadow-focus-secondary: var(--shadow-focus-soft-pink);
+    --color-background: var(--color-charcoal-gray);
+    --color-border: var(--color-gray-700);
   }
 }

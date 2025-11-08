@@ -9,7 +9,7 @@ export const DestinationSchema = z.object({
   attractions: z.array(z.string()).optional(),
   bestTimeToVisit: z.string().optional(),
   visits: z.array(
-    z.string().refine((date) => !isNaN(Date.parse(date)), {
+    z.string().refine((date) => !Number.isNaN(Date.parse(date)), {
       message: "Invalid date format",
     })
   ),
