@@ -13,7 +13,7 @@ export default function ForsideContent() {
         <img
           src="/Images/BaliForside.jpeg"
           alt="Travel Banner"
-          className="w-full h-auto mb-4 rounded-lg"
+          className="mx-auto max-w-2xl h-auto mb-4 rounded-lg"
         />
         <p className="mb-4 text-lg">
           Whether you're a seasoned traveler or planning your first trip, our

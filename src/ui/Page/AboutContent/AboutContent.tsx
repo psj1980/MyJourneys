@@ -1,6 +1,8 @@
+import ArticleContainer from "../../ArticleContainer/ArticleContainer";
+
 export default function AboutContent() {
   return (
-    <section className="max-w-4xl mx-auto p-4 bg-white dark:bg-soft-beach-dark-sand-700 rounded-lg shadow-md dark:text-secondary-text">
+    <ArticleContainer clickable={false}>
       <h1 className="text-3xl font-bold mb-4 text-center">About This Page</h1>
       <p className="mb-4 text-lg">
         Hi! I'm just a regular person who loves to travel. My journeys have
@@ -14,6 +16,6 @@ export default function AboutContent() {
         stories and tips help you discover something new, or inspire you to
         explore the world in your own way.
       </p>
-    </section>
+    </ArticleContainer>
   );
 }

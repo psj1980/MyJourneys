@@ -4,7 +4,6 @@ import DestinationListDummyItem from "./DestinationListDummyItem";
 const meta: Meta<typeof DestinationListDummyItem> = {
   title: "UI/Components/DestinationList/DummyItem",
   component: DestinationListDummyItem,
-  tags: ["autodocs"],
 };
 
 export default meta;

@@ -4,10 +4,6 @@ import Spinner from "./Spinner";
 const meta = {
   title: "UI/Components/Spinner",
   component: Spinner,
-  tags: ["autodocs"],
-  parameters: {
-    layout: "centered",
-  },
   argTypes: {
     size: {
       description: "Spinner size",

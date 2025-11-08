@@ -6,7 +6,6 @@ import DestinationListItem, {
 const meta: Meta<typeof DestinationListItem> = {
   title: "UI/Components/DestinationList/Item",
   component: DestinationListItem,
-  tags: ["autodocs"],
 };
 
 export default meta;
@@ -37,9 +36,9 @@ export const WithLongDescription: Story = {
   },
 };
 
-export const WithoutImage: Story = {
+export const WithDummyImage: Story = {
   args: {
     ...exampleProps,
-    imageUrl: "",
+    imageUrl: "undefined",
   },
 };
