@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import QueryClientAndRouteProviderForStorybook from "../../../utils/test/QueryClientAndRouteProviderForStorybook";
 import DestinationListItem, {
   type DestinationProps,
 } from "./DestinationListItem";
@@ -22,23 +23,36 @@ const exampleProps: DestinationProps = {
   bestTimeToVisit: "April to June and October to early November",
   visits: ["2022-05-15", "2023-09-10"],
   countryCode: "FR",
+  isLoading: false,
 };
 
 export const Default: Story = {
-  args: { ...exampleProps },
+  render: () => (
+    <QueryClientAndRouteProviderForStorybook
+      component={<DestinationListItem {...exampleProps} />}
+    />
+  ),
 };
 
 export const WithLongDescription: Story = {
-  args: {
-    ...exampleProps,
-    description:
-      "Paris is the capital city of France, known for its art, gastronomy, and culture. The city is home to iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.",
-  },
+  render: () => (
+    <QueryClientAndRouteProviderForStorybook
+      component={
+        <DestinationListItem
+          {...exampleProps}
+          description={
+            "Paris is the capital city of France, known for its art, gastronomy, and culture. The city is home to iconic landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral."
+          }
+        />
+      }
+    />
+  ),
 };
 
 export const WithDummyImage: Story = {
   args: {
     ...exampleProps,
     imageUrl: "undefined",
+    isLoading: true,
   },
 };
