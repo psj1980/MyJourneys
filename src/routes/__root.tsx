@@ -1,6 +1,6 @@
 import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
-import ErrorDisplay from "../ui/ErrorDisplay/Error";
+import ErrorDisplay from "../ui/ErrorDisplay/ErrorDisplay";
 
 const RootLayout = () => (
   <>

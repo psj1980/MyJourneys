@@ -5,7 +5,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { ErrorBoundary } from "react-error-boundary";
 import { routeTree } from "./routeTree.gen";
-import ErrorDisplay from "./ui/ErrorDisplay/Error";
+import ErrorDisplay from "./ui/ErrorDisplay/ErrorDisplay";
 
 const queryClient = new QueryClient({
   defaultOptions: {

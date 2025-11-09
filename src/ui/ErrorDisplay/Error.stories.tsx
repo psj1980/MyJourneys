@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ErrorDisplay from "./Error";
+import ErrorDisplay from "./ErrorDisplay";
 
 const meta: Meta<typeof ErrorDisplay> = {
-  title: "UI/ErrorDisplay",
+  title: "UI/Components/ErrorDisplay",
   component: ErrorDisplay,
 };
 
