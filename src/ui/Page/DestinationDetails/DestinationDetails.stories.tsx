@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import DestinationDetails from "./DestinationDetails";
 
-/**
- * Storybook configuration for DestinationDetails component
- *
- * @remarks Displays details for a travel destination.
- */
 const meta: Meta<typeof DestinationDetails> = {
   title: "Page/DestinationDetails",
   component: DestinationDetails,
@@ -15,9 +10,6 @@ export default meta;
 
 type Story = StoryObj<typeof DestinationDetails>;
 
-/**
- * Default story for DestinationDetails
- */
 export const Default: Story = {
   args: {
     Details: {

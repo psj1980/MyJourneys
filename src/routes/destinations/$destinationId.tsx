@@ -1,6 +1,7 @@
 import { createFileRoute, useParams } from "@tanstack/react-router";
 import { useSuspenseFetch } from "../../hooks/useFetchHook";
 import { DetailedDestinationSchema } from "../../types/destination";
+import DestinationDetails from "../../ui/Page/DestinationDetails/DestinationDetails";
 
 export const Route = createFileRoute("/destinations/$destinationId")({
   component: RouteComponent,
@@ -17,7 +18,5 @@ function RouteComponent() {
     DetailedDestinationSchema
   );
 
-  console.log(detailedDestination);
-
-  return <div>{`Hello "/destinations/${destinationId}"!`}</div>;
+  return <DestinationDetails Details={detailedDestination} />;
 }

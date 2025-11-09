@@ -1,11 +1,11 @@
 import "./index.css";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { ErrorBoundary } from "react-error-boundary";
 import { routeTree } from "./routeTree.gen";
+import ErrorDisplay from "./ui/ErrorDisplay/Error";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +29,7 @@ declare module "@tanstack/react-router" {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ErrorBoundary fallback={<div>Something went wrong</div>}>
+      <ErrorBoundary fallback={<ErrorDisplay error="Something went wrong" />}>
         <RouterProvider router={router} />
       </ErrorBoundary>
     </QueryClientProvider>
