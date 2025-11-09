@@ -12,23 +12,6 @@
     }
   ],
 
-  "visits": [
-    {
-      "id": 1,
-      "userId": 1,
-      "destinationId": 2,
-      "date": "2023-06-15",
-      "durationDays": 7
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "destinationId": 3,
-      "date": "2023-07-20",
-      "durationDays": 10
-    }
-  ],
-
   "destinations": [
     {
       "id": 1,
@@ -117,6 +100,557 @@
       "visits": ["2023-08-12", "2024-08-31"],
       "imageUrl": "mallorca.jpeg",
       "rating": 3.6
+    }
+  ],
+
+  "destinationDetails": [
+    {
+      "id": 1,
+      "name": "Madeira",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "description": "A beautiful archipelago known for its stunning landscapes, botanical gardens, and hiking trails.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2023-05-15"],
+      "imageUrl": "madeira.jpeg",
+      "rating": 4.7,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Laurisilva Forest",
+          "description": "UNESCO World Heritage forest with unique flora and fauna.",
+          "location": "Madeira Island",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "laurisilva_forest.jpeg",
+            "description": "Mist in Laurisilva Forest"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Cabo Girão Skywalk",
+          "description": "Glass-floored skywalk on one of Europe's highest sea cliffs.",
+          "location": "Cabo Girão, Madeira",
+          "entryFee": 2,
+          "openingHours": "08:00 AM - 08:00 PM",
+          "image": {
+            "url": "cabo_girao.jpeg",
+            "description": "View from Cabo Girão Skywalk"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Espetada",
+          "description": "Grilled beef skewers seasoned with garlic and bay leaves.",
+          "image": {
+            "url": "espetada.jpeg",
+            "description": "Espetada on a skewer"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Bolo do Caco",
+          "description": "Traditional flatbread served with garlic butter.",
+          "spiceLevel": "Mild",
+          "image": {
+            "url": "bolo_do_caco.jpeg",
+            "description": "Bolo do Caco bread"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Try the local Poncha drink, but drink responsibly."
+        },
+        {
+          "id": 2,
+          "tip": "Tipping is appreciated but not mandatory in restaurants."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bali",
+      "country": "Indonesia",
+      "countryCode": "ID",
+      "description": "A popular tourist destination known for its beautiful beaches, rice terraces, and vibrant culture.",
+      "bestTimeToVisit": "April to May and September to October",
+      "visits": ["2024-05-07", "2025-04-21"],
+      "imageUrl": "bali.jpeg",
+      "rating": 4.8,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Uluwatu Temple",
+          "description": "A stunning sea temple perched on a cliff, offering breathtaking sunset views.",
+          "location": "Pecatu, Bali",
+          "entryFee": 20000,
+          "openingHours": "09:00 AM - 07:00 PM",
+          "image": {
+            "url": "uluwatu_temple.jpeg",
+            "description": "Uluwatu Temple at sunset"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Jatiluwih Rice Terraces",
+          "description": "Famous rice terraces known for their beautiful landscapes and traditional Balinese irrigation system.",
+          "location": "Jatiluwih, Bali",
+          "entryFee": 15000,
+          "openingHours": "08:00 AM - 06:00 PM",
+          "image": {
+            "url": "jatiluwih_rice_terraces.jpeg",
+            "description": "Jatiluwih Rice Terraces in the rain"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Nasi Goreng",
+          "description": "Indonesian fried rice dish typically served with a fried egg on top.",
+          "spiceLevel": "Medium",
+          "image": {
+            "url": "nasi_goreng.jpeg",
+            "description": "A plate of Nasi Goreng",
+            "photographer": "Unknown"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Beef Rendang",
+          "description": "A rich and tender coconut beef stew slow-cooked with spices.",
+          "spiceLevel": "Medium",
+          "image": {
+            "url": "beef_rendang.jpeg",
+            "description": "A serving of Beef Rendang"
+          },
+          "bestPlaceToTry": "Mayasari Restaurant, Maya Ubud Resort & Spa"
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Always use your right hand when giving or receiving something, as the left hand is considered unclean."
+        },
+        {
+          "id": 2,
+          "tip": "When visiting temples, dress modestly and wear a sarong and sash, which are often provided at the entrance."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Paris",
+      "country": "France",
+      "countryCode": "FR",
+      "description": "The city of lights and love, known for its art, fashion, and culture.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2024-06-27"],
+      "imageUrl": "paris.jpeg",
+      "rating": 4.9,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Eiffel Tower",
+          "description": "Iconic Paris landmark offering panoramic city views.",
+          "location": "Champ de Mars, Paris",
+          "entryFee": 25,
+          "openingHours": "09:30 AM - 11:45 PM",
+          "image": {
+            "url": "eiffel_tower.jpeg",
+            "description": "Eiffel Tower at dusk"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Louvre Museum",
+          "description": "World's largest art museum and a historic monument.",
+          "location": "Rue de Rivoli, Paris",
+          "entryFee": 17,
+          "openingHours": "09:00 AM - 06:00 PM",
+          "image": {
+            "url": "louvre_museum.jpeg",
+            "description": "Louvre Museum entrance"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Croissant",
+          "description": "Flaky, buttery pastry, a French breakfast staple.",
+          "image": {
+            "url": "croissant.jpeg",
+            "description": "Fresh croissants"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Coq au Vin",
+          "description": "Chicken braised with wine, mushrooms, and bacon.",
+          "image": {
+            "url": "coq_au_vin.jpeg",
+            "description": "Coq au Vin served in a bowl"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Greet with 'Bonjour' and say 'Merci' when leaving."
+        },
+        {
+          "id": 2,
+          "tip": "Dress smartly; Parisians value style."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Oranjestad",
+      "country": "Aruba",
+      "countryCode": "AW",
+      "description": "The capital city of Aruba, known for its beautiful beaches and vibrant culture.",
+      "bestTimeToVisit": "September to October",
+      "visits": ["2025-09-14"],
+      "imageUrl": "oranjestad.jpeg",
+      "rating": 4.5,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Eagle Beach",
+          "description": "One of the most beautiful beaches in Aruba.",
+          "location": "Oranjestad, Aruba",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "eagle_beach.jpeg",
+            "description": "Eagle Beach with Divi Divi trees"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Aruba Aloe Factory",
+          "description": "Tour the oldest aloe factory in the world.",
+          "location": "Oranjestad, Aruba",
+          "entryFee": 0,
+          "openingHours": "09:00 AM - 05:00 PM",
+          "image": {
+            "url": "aruba_aloe_factory.jpeg",
+            "description": "Aruba Aloe Factory tour"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Keshi Yena",
+          "description": "Stuffed cheese dish with chicken or beef.",
+          "spiceLevel": "Medium",
+          "image": {
+            "url": "keshi_yena.jpeg",
+            "description": "Keshi Yena served hot"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Pastechi",
+          "description": "Fried pastry filled with cheese, meat, or fish.",
+          "spiceLevel": "Mild",
+          "image": {
+            "url": "pastechi.jpeg",
+            "description": "Pastechi pastries"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Try local Papiamento phrases to connect with locals."
+        },
+        {
+          "id": 2,
+          "tip": "Beachwear is for the beach; dress casually elsewhere."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Willemstad",
+      "country": "Curacao",
+      "countryCode": "CW",
+      "description": "The capital city of Curacao, known for its colorful Dutch colonial architecture.",
+      "bestTimeToVisit": "September to October",
+      "visits": ["2025-09-19"],
+      "imageUrl": "willemstad.jpeg",
+      "rating": 4.6,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Queen Emma Bridge",
+          "description": "Floating pontoon bridge connecting Punda and Otrobanda.",
+          "location": "Willemstad, Curacao",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "queen_emma_bridge.jpeg",
+            "description": "Queen Emma Bridge at night"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Handelskade",
+          "description": "Colorful waterfront buildings, iconic to Willemstad.",
+          "location": "Willemstad, Curacao",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "handelskade.jpeg",
+            "description": "Handelskade waterfront"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Stoba",
+          "description": "Traditional stew made with beef or goat.",
+          "spiceLevel": "Medium",
+          "image": {
+            "url": "stoba.jpeg",
+            "description": "Stoba stew"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Funchi",
+          "description": "Cornmeal side dish similar to polenta.",
+          "spiceLevel": "Mild",
+          "image": {
+            "url": "funchi.jpeg",
+            "description": "Funchi served with stew"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Respect the colorful architecture; it's a UNESCO site."
+        },
+        {
+          "id": 2,
+          "tip": "Try the local Blue Curacao liqueur."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Kralendijk",
+      "country": "Bonaire",
+      "countryCode": "BQ",
+      "description": "The capital city of Bonaire, known for its stunning coral reefs and diving spots.",
+      "bestTimeToVisit": "September to October",
+      "visits": ["2025-09-24"],
+      "imageUrl": "kralendijk.jpeg",
+      "rating": 4.7,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Bonaire National Marine Park",
+          "description": "Protected marine park with world-class diving.",
+          "location": "Kralendijk, Bonaire",
+          "entryFee": 45,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "marine_park.jpeg",
+            "description": "Coral reef in Bonaire"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Salt Pans",
+          "description": "Pink salt flats and flamingo habitats.",
+          "location": "Kralendijk, Bonaire",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "salt_pans.jpeg",
+            "description": "Salt pans with flamingos"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Karko",
+          "description": "Conch stew, a Bonaire specialty.",
+          "spiceLevel": "Medium",
+          "image": {
+            "url": "karko.jpeg",
+            "description": "Karko stew"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Pastechi",
+          "description": "Fried pastry filled with cheese or meat.",
+          "spiceLevel": "Mild",
+          "image": {
+            "url": "pastechi_bonaire.jpeg",
+            "description": "Pastechi pastries"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Respect marine life; do not touch coral."
+        },
+        {
+          "id": 2,
+          "tip": "Try local goat dishes for an authentic taste."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Ystad",
+      "country": "Sverige",
+      "countryCode": "SE",
+      "description": "A charming town in southern Sweden, known for its medieval architecture and beautiful beaches.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2024-11-21"],
+      "imageUrl": "ystad.jpeg",
+      "rating": 4.4,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Ystad Abbey",
+          "description": "Historic abbey dating back to the 13th century.",
+          "location": "Ystad, Sweden",
+          "entryFee": 50,
+          "openingHours": "10:00 AM - 04:00 PM",
+          "image": {
+            "url": "ystad_abbey.jpeg",
+            "description": "Ystad Abbey exterior"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Ystad Beach",
+          "description": "Popular sandy beach for swimming and relaxation.",
+          "location": "Ystad, Sweden",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "ystad_beach.jpeg",
+            "description": "Ystad Beach in summer"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Sill",
+          "description": "Pickled herring, a Swedish classic.",
+          "spiceLevel": "Mild",
+          "image": {
+            "url": "sill.jpeg",
+            "description": "Sill with potatoes"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Prinsesstårta",
+          "description": "Green marzipan cake filled with cream and jam.",
+          "image": {
+            "url": "prinsesstarta.jpeg",
+            "description": "Prinsesstårta slice"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Remove shoes when entering Swedish homes."
+        },
+        {
+          "id": 2,
+          "tip": "Try fika, the Swedish coffee break tradition."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Mallorca",
+      "country": "Spain",
+      "countryCode": "ES",
+      "description": "A popular island destination known for its beautiful beaches, vibrant nightlife, and stunning landscapes.",
+      "bestTimeToVisit": "April to October",
+      "visits": ["2023-08-12", "2024-08-31"],
+      "imageUrl": "mallorca.jpeg",
+      "rating": 3.6,
+      "attractions": [
+        {
+          "id": 1,
+          "name": "Catedral de Mallorca",
+          "description": "Gothic cathedral overlooking Palma's waterfront.",
+          "location": "Palma, Mallorca",
+          "entryFee": 8,
+          "openingHours": "10:00 AM - 05:15 PM",
+          "image": {
+            "url": "catedral_mallorca.jpeg",
+            "description": "Mallorca Cathedral facade"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Serra de Tramuntana",
+          "description": "Mountain range ideal for hiking and cycling.",
+          "location": "Mallorca",
+          "entryFee": 0,
+          "openingHours": "Open 24 hours",
+          "image": {
+            "url": "serra_tramuntana.jpeg",
+            "description": "Serra de Tramuntana landscape"
+          }
+        }
+      ],
+      "localCuisine": [
+        {
+          "id": 1,
+          "name": "Ensaimada",
+          "description": "Sweet spiral pastry dusted with powdered sugar.",
+          "image": {
+            "url": "ensaimada.jpeg",
+            "description": "Ensaimada pastry"
+          }
+        },
+        {
+          "id": 2,
+          "name": "Tumbet",
+          "description": "Vegetable casserole with potatoes, eggplant, and peppers.",
+          "image": {
+            "url": "tumbet.jpeg",
+            "description": "Tumbet casserole"
+          }
+        }
+      ],
+      "culturalTips": [
+        {
+          "id": 1,
+          "tip": "Lunch is late; expect restaurants to open after 1 PM."
+        },
+        {
+          "id": 2,
+          "tip": "Try local wines from Binissalem region."
+        }
+      ]
     }
   ],
 

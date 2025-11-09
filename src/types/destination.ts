@@ -1,4 +1,8 @@
 import z from "zod";
+import { CuisineSchema } from "./cuisine";
+import { ImageSchema } from "./image";
+import { CulturalTipSchema } from "./culturalTip";
+import { AttractionSchema } from "./attraction";
 
 export const DestinationSchema = z.object({
   id: z.number(),
@@ -13,7 +17,19 @@ export const DestinationSchema = z.object({
       message: "Invalid date format",
     })
   ),
-  imageUrl: z.string("Invalid URL").optional(),
+  imageUrl: z.string().optional(),
 });
 
 export type Destination = z.infer<typeof DestinationSchema>;
+
+export const DestinationsSchema = DestinationSchema.array();
+
+export const DetailedDestinationSchema = DestinationSchema.extend({
+  localCuisine: z.array(CuisineSchema).optional(),
+  travelTips: z.string().optional(),
+  gallery: z.array(ImageSchema).optional(),
+  attractions: z.array(AttractionSchema).optional(),
+  culturalTips: z.array(CulturalTipSchema).optional(),
+});
+
+export type DetailedDestination = z.infer<typeof DetailedDestinationSchema>;

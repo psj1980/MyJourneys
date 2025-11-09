@@ -1,14 +1,13 @@
-import { useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { Suspense } from "react";
+import { useSuspenseFetch } from "../../hooks/useFetchHook";
 import {
-  DestinationSchema,
+  DestinationsSchema,
   type Destination as DestinationType,
 } from "../../types/destination";
 import DestinationList from "../../ui/DestinationList/DestinationList";
 import DestinationListItem from "../../ui/DestinationList/Item/DestinationListItem";
 import DestinationListDummyItem from "../../ui/DestinationList/ItemDummy/DestinationListDummyItem";
-import { environment } from "../../utils/environment";
 
 export const Route = createFileRoute("/destinations/")({
   component: Index,
@@ -32,19 +31,16 @@ function Index() {
 }
 
 function AllDestinations() {
-  const { data: destinations } = useSuspenseQuery<DestinationType[]>({
-    queryKey: ["destinations"],
-    queryFn: async () => {
-      const response = await fetch(`${environment.apiUrl}/destinations`);
-      const json = await response.json();
-
-      return DestinationSchema.array().parse(json);
-    },
-  });
+  const path = "destinations";
+  const { data: destinations2 } = useSuspenseFetch<typeof DestinationsSchema>(
+    [path],
+    path,
+    DestinationsSchema
+  );
 
   return (
     <DestinationList>
-      {[...destinations]
+      {[...destinations2]
         .sort((a: DestinationType, b: DestinationType) =>
           a.visits[0].localeCompare(b.visits[0])
         )
