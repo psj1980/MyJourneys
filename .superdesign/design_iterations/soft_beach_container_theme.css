@@ -1,0 +1,440 @@
+:root {
+  /* Primary Soft Beach Colors */
+  --color-soft-beach-bright-blue: #51e2f5;
+  --color-soft-beach-blue-green: #9df9ef;
+  --color-soft-beach-dusty-white: #edf7f6;
+  --color-soft-beach-pink-sand: #ffa8b6;
+  --color-soft-beach-dark-sand: #a28089;
+  
+  /* Supplementary Colors */
+  --color-soft-beach-muted-gray: #6b6b6b;
+  --color-soft-beach-bright-coral: #ff6b6b;
+  --color-soft-beach-light-coral: #ff95a5;
+  --color-black-soft: #2c2c2c;
+  --color-black-darker: #1a1a1a;
+  --color-charcoal-gray: #3e3e42;
+  --color-white: #ffffff;
+  --color-white-smoke: #f5f5f5;
+  --color-white-border: #e0e0e0;
+  
+  /* Theme Colors Mapping */
+  --background: #edf7f6;
+  --foreground: #2c2c2c;
+  --card: #ffffff;
+  --card-foreground: #2c2c2c;
+  --popover: #ffffff;
+  --popover-foreground: #2c2c2c;
+  --primary: #51e2f5;
+  --primary-foreground: #1a1a1a;
+  --secondary: #ffa8b6;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f5f5f5;
+  --muted-foreground: #6b6b6b;
+  --accent: #9df9ef;
+  --accent-foreground: #1a1a1a;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #ffffff;
+  --border: #e0e0e0;
+  --input: #ffffff;
+  --ring: #51e2f5;
+  
+  /* Container Specific Variables */
+  --container-bg: #ffffff;
+  --container-border: #e0e0e0;
+  --container-shadow: 0 2px 8px rgba(162, 128, 137, 0.08);
+  --container-shadow-hover: 0 8px 24px rgba(162, 128, 137, 0.15);
+  --container-shadow-active: 0 1px 4px rgba(162, 128, 137, 0.12);
+  --container-radius: 1rem;
+  --container-padding: 1.5rem;
+  
+  /* Typography */
+  --font-sans: 'Inter', 'Roboto', sans-serif;
+  --font-serif: 'Merriweather', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Border Radius */
+  --radius: 1rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  
+  /* Shadows */
+  --shadow-2xs: 0 1px 2px 0 rgba(162, 128, 137, 0.05);
+  --shadow-xs: 0 2px 4px 0 rgba(162, 128, 137, 0.06);
+  --shadow-sm: 0 2px 8px rgba(162, 128, 137, 0.08);
+  --shadow: 0 4px 12px rgba(162, 128, 137, 0.1);
+  --shadow-md: 0 8px 24px rgba(162, 128, 137, 0.15);
+  --shadow-lg: 0 12px 32px rgba(162, 128, 137, 0.18);
+  --shadow-xl: 0 16px 48px rgba(162, 128, 137, 0.2);
+  --shadow-2xl: 0 24px 64px rgba(162, 128, 137, 0.25);
+  
+  /* Focus States */
+  --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.4);
+  --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.4);
+  
+  /* Spacing */
+  --spacing: 0.25rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  --transition-slower: 400ms ease-out;
+}
+
+/* Container Base Styles */
+.container-card {
+  background: var(--container-bg) !important;
+  border-radius: var(--container-radius) !important;
+  box-shadow: var(--container-shadow) !important;
+  border: 1px solid var(--container-border) !important;
+  overflow: hidden !important;
+  transition: all var(--transition-base) !important;
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+.container-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--container-shadow-hover) !important;
+  border-color: var(--accent) !important;
+}
+
+.container-card:focus {
+  outline: none !important;
+  box-shadow: var(--shadow-focus) !important;
+}
+
+.container-card:focus-visible {
+  outline: none !important;
+  box-shadow: var(--shadow-focus) !important;
+}
+
+.container-card:active {
+  transform: scale(0.98) !important;
+  box-shadow: var(--container-shadow-active) !important;
+}
+
+/* Container Image */
+.container-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform var(--transition-slow) !important;
+}
+
+.container-card:hover .container-image {
+  transform: scale(1.05) !important;
+}
+
+.container-image-wrapper {
+  position: relative !important;
+  overflow: hidden !important;
+  background: var(--muted) !important;
+}
+
+.container-image-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%) !important;
+  opacity: 0 !important;
+  transition: opacity var(--transition-base) !important;
+}
+
+.container-card:hover .container-image-overlay {
+  opacity: 1 !important;
+}
+
+/* Container Content */
+.container-content {
+  padding: var(--container-padding) !important;
+}
+
+.container-title {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: var(--foreground) !important;
+  margin-bottom: 0.25rem !important;
+  font-family: var(--font-sans) !important;
+}
+
+.container-subtitle {
+  font-size: 1rem !important;
+  color: var(--muted-foreground) !important;
+  margin-bottom: 0.75rem !important;
+  font-family: var(--font-sans) !important;
+}
+
+.container-description {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: var(--charcoal-gray) !important;
+  margin-bottom: 1rem !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* Container Tags */
+.container-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.container-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  padding: 0.25rem 0.75rem !important;
+  background: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.container-tag:hover {
+  background: var(--primary) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Container Footer */
+.container-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.container-price {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--destructive) !important;
+  font-family: var(--font-sans) !important;
+}
+
+.container-action {
+  padding: 0.5rem 1rem !important;
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500 !important;
+  transition: all var(--transition-fast) !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-family: var(--font-sans) !important;
+}
+
+.container-action:hover {
+  background: var(--accent) !important;
+  transform: translateX(2px) !important;
+}
+
+/* Rating Stars */
+.container-rating {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  color: var(--secondary) !important;
+}
+
+.star-filled {
+  color: var(--secondary) !important;
+}
+
+.star-empty {
+  color: var(--border) !important;
+}
+
+/* Horizontal Layout */
+.container-horizontal {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.container-horizontal .container-image-wrapper {
+  width: 40% !important;
+  flex-shrink: 0 !important;
+}
+
+.container-horizontal .container-content {
+  flex: 1 !important;
+}
+
+/* Compact Layout */
+.container-compact {
+  padding: 0 !important;
+}
+
+.container-compact .container-content {
+  padding: 1rem !important;
+}
+
+.container-compact .container-title {
+  font-size: 1.125rem !important;
+}
+
+.container-compact .container-description {
+  display: none !important;
+}
+
+/* Ripple Effect */
+.ripple-effect {
+  position: absolute !important;
+  border-radius: 50% !important;
+  background: rgba(157, 249, 239, 0.6) !important;
+  transform: scale(0) !important;
+  animation: ripple 0.6s ease-out !important;
+  pointer-events: none !important;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4) !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Loading Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--accent) 50%, var(--muted) 75%) !important;
+  background-size: 200% 100% !important;
+  animation: loading 1.5s infinite !important;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-horizontal {
+    flex-direction: column !important;
+  }
+  
+  .container-horizontal .container-image-wrapper {
+    width: 100% !important;
+    height: 200px !important;
+  }
+}
+
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Theme Colors */
+    --background: #1a1a1a;
+    --foreground: #f5f5f5;
+    --card: #2c2c2c;
+    --card-foreground: #f5f5f5;
+    --popover: #2c2c2c;
+    --popover-foreground: #f5f5f5;
+    --primary: #51e2f5;
+    --primary-foreground: #1a1a1a;
+    --secondary: #ffa8b6;
+    --secondary-foreground: #1a1a1a;
+    --muted: #3e3e42;
+    --muted-foreground: #a28089;
+    --accent: #9df9ef;
+    --accent-foreground: #1a1a1a;
+    --destructive: #ff6b6b;
+    --destructive-foreground: #ffffff;
+    --border: #3e3e42;
+    --input: #2c2c2c;
+    --ring: #51e2f5;
+    
+    /* Dark Container Specific */
+    --container-bg: #2c2c2c;
+    --container-border: #3e3e42;
+    --container-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --container-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --container-shadow-active: 0 1px 4px rgba(0, 0, 0, 0.2);
+    
+    /* Dark Focus States */
+    --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.6);
+    --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.6);
+  }
+  
+  /* Dark Theme Specific Overrides */
+  .container-image-overlay {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%) !important;
+  }
+  
+  .container-tag {
+    background: rgba(157, 249, 239, 0.2) !important;
+    color: var(--accent) !important;
+  }
+  
+  .container-tag:hover {
+    background: rgba(81, 226, 245, 0.3) !important;
+    color: var(--primary) !important;
+  }
+  
+  .ripple-effect {
+    background: rgba(81, 226, 245, 0.4) !important;
+  }
+  
+  .skeleton {
+    background: linear-gradient(90deg, var(--muted) 25%, rgba(157, 249, 239, 0.3) 50%, var(--muted) 75%) !important;
+  }
+}
+
+/* Manual Dark Theme Class */
+.dark {
+  /* Dark Theme Colors */
+  --background: #1a1a1a !important;
+  --foreground: #f5f5f5 !important;
+  --card: #2c2c2c !important;
+  --card-foreground: #f5f5f5 !important;
+  --popover: #2c2c2c !important;
+  --popover-foreground: #f5f5f5 !important;
+  --primary: #51e2f5 !important;
+  --primary-foreground: #1a1a1a !important;
+  --secondary: #ffa8b6 !important;
+  --secondary-foreground: #1a1a1a !important;
+  --muted: #3e3e42 !important;
+  --muted-foreground: #a28089 !important;
+  --accent: #9df9ef !important;
+  --accent-foreground: #1a1a1a !important;
+  --destructive: #ff6b6b !important;
+  --destructive-foreground: #ffffff !important;
+  --border: #3e3e42 !important;
+  --input: #2c2c2c !important;
+  --ring: #51e2f5 !important;
+  
+  /* Dark Container Specific */
+  --container-bg: #2c2c2c !important;
+  --container-border: #3e3e42 !important;
+  --container-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  --container-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  --container-shadow-active: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
+  
+  /* Dark Focus States */
+  --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.6) !important;
+  --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.6) !important;
+}
+
+.dark .container-image-overlay {
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%) !important;
+}
+
+.dark .container-tag {
+  background: rgba(157, 249, 239, 0.2) !important;
+  color: var(--accent) !important;
+}
+
+.dark .container-tag:hover {
+  background: rgba(81, 226, 245, 0.3) !important;
+  color: var(--primary) !important;
+}
+
+.dark .ripple-effect {
+  background: rgba(81, 226, 245, 0.4) !important;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, var(--muted) 25%, rgba(157, 249, 239, 0.3) 50%, var(--muted) 75%) !important;
+}

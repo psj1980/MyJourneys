@@ -16,7 +16,7 @@ type ArticleContainerProps = {
  * @returns React component wrapping the provided children.
  */
 export default function ArticleContainer({
-  children = false,
+  children,
   href,
 }: Readonly<ArticleContainerProps>) {
   const classNames = `

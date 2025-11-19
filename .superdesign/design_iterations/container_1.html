@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Beach Container Design - Travel Destinations</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="soft_beach_container_theme.css">
+    
+    <style>
+        /* Additional custom styles */
+        .demo-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        /* Grid layouts */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .compact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 50;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .theme-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Loading animation for demo */
+        .loading-demo {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--muted);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body class="min-h-screen transition-colors duration-300">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i data-lucide="sun" class="sun-icon w-5 h-5"></i>
+        <i data-lucide="moon" class="moon-icon w-5 h-5 hidden"></i>
+    </button>
+    
+    <div class="container mx-auto px-6 py-12 max-w-7xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Soft Beach Travel Destinations</h1>
+            <p class="text-lg opacity-75">Discover your next adventure with our beautiful container designs</p>
+        </header>
+        
+        <!-- Standard Card Layout Section -->
+        <section class="demo-section loading-demo">
+            <div class="section-header">
+                <h2 class="text-2xl font-semibold">Featured Destinations</h2>
+                <span class="text-sm opacity-60">Standard card layout</span>
+            </div>
+            
+            <div class="card-grid">
+                <!-- Card 1: Maldives -->
+                <div class="container-card" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 240px;">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&h=600&fit=crop" 
+                             alt="Maldives Beach Resort" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Maldives</h3>
+                        <div class="container-subtitle">
+                            <span>Indian Ocean</span>
+                            <span class="container-rating ml-2">
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <span class="ml-1">5.0</span>
+                            </span>
+                        </div>
+                        <p class="container-description">
+                            Crystal clear waters, overwater bungalows, and pristine white sand beaches. 
+                            The perfect tropical paradise for your dream vacation.
+                        </p>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="umbrella" class="w-3 h-3"></i>
+                                Beach
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="thermometer" class="w-3 h-3"></i>
+                                28°C
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="plane" class="w-3 h-3"></i>
+                                10h flight
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action">
+                                View Details
+                                <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
+                            </button>
+                            <span class="container-price">$2,499</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Santorini -->
+                <div class="container-card" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 240px;">
+                        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop" 
+                             alt="Santorini Greece" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Santorini</h3>
+                        <div class="container-subtitle">
+                            <span>Greece</span>
+                            <span class="container-rating ml-2">
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-empty"></i>
+                                <span class="ml-1">4.8</span>
+                            </span>
+                        </div>
+                        <p class="container-description">
+                            Iconic blue-domed churches, stunning sunsets, and charming white-washed buildings 
+                            overlooking the Aegean Sea.
+                        </p>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="camera" class="w-3 h-3"></i>
+                                Scenic
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="thermometer" class="w-3 h-3"></i>
+                                25°C
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="plane" class="w-3 h-3"></i>
+                                4h flight
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action">
+                                View Details
+                                <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
+                            </button>
+                            <span class="container-price">$1,899</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Bali -->
+                <div class="container-card" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 240px;">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&h=600&fit=crop" 
+                             alt="Bali Indonesia" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Bali</h3>
+                        <div class="container-subtitle">
+                            <span>Indonesia</span>
+                            <span class="container-rating ml-2">
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-empty"></i>
+                                <span class="ml-1">4.7</span>
+                            </span>
+                        </div>
+                        <p class="container-description">
+                            Ancient temples, lush rice terraces, vibrant culture, and world-class surfing beaches. 
+                            A perfect blend of adventure and relaxation.
+                        </p>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="trees" class="w-3 h-3"></i>
+                                Nature
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="thermometer" class="w-3 h-3"></i>
+                                30°C
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="plane" class="w-3 h-3"></i>
+                                8h flight
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action">
+                                View Details
+                                <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
+                            </button>
+                            <span class="container-price">$1,299</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Horizontal Card Layout Section -->
+        <section class="demo-section loading-demo" style="animation-delay: 0.2s;">
+            <div class="section-header">
+                <h2 class="text-2xl font-semibold">Popular Getaways</h2>
+                <span class="text-sm opacity-60">Horizontal layout</span>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Horizontal Card 1 -->
+                <div class="container-card container-horizontal" tabindex="0">
+                    <div class="container-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&h=600&fit=crop" 
+                             alt="Caribbean Beach" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Caribbean Cruise</h3>
+                        <div class="container-subtitle">
+                            <span>Multiple Islands</span>
+                            <span class="container-rating ml-2">
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-empty"></i>
+                                <span class="ml-1">4.6</span>
+                            </span>
+                        </div>
+                        <p class="container-description">
+                            7-day luxury cruise visiting Jamaica, Grand Cayman, and Cozumel. All-inclusive dining, 
+                            entertainment, and shore excursions included.
+                        </p>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="ship" class="w-3 h-3"></i>
+                                Cruise
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="utensils" class="w-3 h-3"></i>
+                                All-Inclusive
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="calendar" class="w-3 h-3"></i>
+                                7 days
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action">
+                                Book Now
+                                <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
+                            </button>
+                            <span class="container-price">$1,799</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horizontal Card 2 -->
+                <div class="container-card container-horizontal" tabindex="0">
+                    <div class="container-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=800&h=600&fit=crop" 
+                             alt="Dubai Skyline" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Dubai Adventure</h3>
+                        <div class="container-subtitle">
+                            <span>United Arab Emirates</span>
+                            <span class="container-rating ml-2">
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <i data-lucide="star" class="w-4 h-4 inline star-filled"></i>
+                                <span class="ml-1">4.9</span>
+                            </span>
+                        </div>
+                        <p class="container-description">
+                            Experience luxury shopping, desert safaris, and the world's tallest building. 
+                            A perfect blend of modern architecture and traditional culture.
+                        </p>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="building-2" class="w-3 h-3"></i>
+                                City
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="shopping-bag" class="w-3 h-3"></i>
+                                Shopping
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="plane" class="w-3 h-3"></i>
+                                7h flight
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action">
+                                Explore
+                                <i data-lucide="arrow-right" class="w-4 h-4 inline ml-1"></i>
+                            </button>
+                            <span class="container-price">$2,199</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Compact Grid Layout Section -->
+        <section class="demo-section loading-demo" style="animation-delay: 0.4s;">
+            <div class="section-header">
+                <h2 class="text-2xl font-semibold">Quick Escapes</h2>
+                <span class="text-sm opacity-60">Compact grid layout</span>
+            </div>
+            
+            <div class="compact-grid">
+                <!-- Compact Card 1 -->
+                <div class="container-card container-compact" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 160px;">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" 
+                             alt="Swiss Alps" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Swiss Alps</h3>
+                        <div class="container-subtitle">Switzerland</div>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="mountain" class="w-3 h-3"></i>
+                                Mountains
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="snowflake" class="w-3 h-3"></i>
+                                Skiing
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action btn-sm">View</button>
+                            <span class="container-price">$999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compact Card 2 -->
+                <div class="container-card container-compact" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 160px;">
+                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&h=600&fit=crop" 
+                             alt="Paris" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Paris</h3>
+                        <div class="container-subtitle">France</div>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="landmark" class="w-3 h-3"></i>
+                                Culture
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="coffee" class="w-3 h-3"></i>
+                                Cafés
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action btn-sm">View</button>
+                            <span class="container-price">$1,299</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compact Card 3 -->
+                <div class="container-card container-compact" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 160px;">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop" 
+                             alt="Kyoto" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Kyoto</h3>
+                        <div class="container-subtitle">Japan</div>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="torii" class="w-3 h-3"></i>
+                                Temples
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="cherry" class="w-3 h-3"></i>
+                                Cherry Blossoms
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action btn-sm">View</button>
+                            <span class="container-price">$1,599</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compact Card 4 -->
+                <div class="container-card container-compact" tabindex="0">
+                    <div class="container-image-wrapper" style="height: 160px;">
+                        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&h=600&fit=crop" 
+                             alt="Iceland" 
+                             class="container-image">
+                        <div class="container-image-overlay"></div>
+                    </div>
+                    <div class="container-content">
+                        <h3 class="container-title">Iceland</h3>
+                        <div class="container-subtitle">Reykjavik</div>
+                        <div class="container-tags">
+                            <span class="container-tag">
+                                <i data-lucide="zap" class="w-3 h-3"></i>
+                                Northern Lights
+                            </span>
+                            <span class="container-tag">
+                                <i data-lucide="waves" class="w-3 h-3"></i>
+                                Hot Springs
+                            </span>
+                        </div>
+                        <div class="container-footer">
+                            <button class="container-action btn-sm">View</button>
+                            <span class="container-price">$1,899</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Loading State Demo -->
+        <section class="demo-section">
+            <div class="section-header">
+                <h2 class="text-2xl font-semibold">Loading States</h2>
+                <span class="text-sm opacity-60">Skeleton loading animation</span>
+            </div>
+            
+            <div class="card-grid">
+                <!-- Skeleton Card -->
+                <div class="container-card">
+                    <div class="container-image-wrapper skeleton" style="height: 240px;"></div>
+                    <div class="container-content">
+                        <div class="skeleton" style="height: 32px; width: 60%; margin-bottom: 8px; border-radius: 4px;"></div>
+                        <div class="skeleton" style="height: 20px; width: 40%; margin-bottom: 16px; border-radius: 4px;"></div>
+                        <div class="skeleton" style="height: 60px; width: 100%; margin-bottom: 16px; border-radius: 4px;"></div>
+                        <div class="flex gap-2 mb-4">
+                            <div class="skeleton" style="height: 28px; width: 80px; border-radius: 12px;"></div>
+                            <div class="skeleton" style="height: 28px; width: 80px; border-radius: 12px;"></div>
+                            <div class="skeleton" style="height: 28px; width: 80px; border-radius: 12px;"></div>
+                        </div>
+                        <div class="container-footer">
+                            <div class="skeleton" style="height: 40px; width: 120px; border-radius: 8px;"></div>
+                            <div class="skeleton" style="height: 32px; width: 80px; border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const sunIcon = document.querySelector('.sun-icon');
+            const moonIcon = document.querySelector('.moon-icon');
+            
+            body.classList.toggle('dark');
+            
+            if (body.classList.contains('dark')) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            } else {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+            
+            // Re-initialize icons after DOM change
+            lucide.createIcons();
+        }
+        
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            toggleTheme();
+        }
+        
+        // Ripple effect on click
+        document.querySelectorAll('.container-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Create ripple element
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple-effect');
+                
+                // Calculate position
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+        
+        // Add interactive hover effects to tags
+        document.querySelectorAll('.container-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-1px)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Simulate loading state
+        const skeletonCard = document.querySelector('.skeleton').closest('.container-card');
+        if (skeletonCard) {
+            setTimeout(() => {
+                // This would be replaced with actual data loading in a real application
+                console.log('Content would load here');
+            }, 3000);
+        }
+        
+        // Add keyboard navigation support
+        document.querySelectorAll('.container-card').forEach(card => {
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+        
+        // Intersection Observer for fade-in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards
+        document.querySelectorAll('.container-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

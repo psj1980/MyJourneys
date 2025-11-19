@@ -1,8 +1,9 @@
 import ArticleContainer from "../../ArticleContainer/ArticleContainer";
+import Button from "../../Button/Button";
 
 export default function AboutContent() {
   return (
-    <ArticleContainer clickable={false}>
+    <ArticleContainer>
       <h1 className="text-3xl font-bold mb-4 text-center">About This Page</h1>
       <p className="mb-4 text-lg">
         Hi! I'm just a regular person who loves to travel. My journeys have
@@ -16,6 +17,7 @@ export default function AboutContent() {
         stories and tips help you discover something new, or inspire you to
         explore the world in your own way.
       </p>
+      <Button variant="primary">Contact Me</Button>
     </ArticleContainer>
   );
 }
