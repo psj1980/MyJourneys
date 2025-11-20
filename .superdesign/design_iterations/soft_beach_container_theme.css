@@ -5,7 +5,7 @@
   --color-soft-beach-dusty-white: #edf7f6;
   --color-soft-beach-pink-sand: #ffa8b6;
   --color-soft-beach-dark-sand: #a28089;
-  
+
   /* Supplementary Colors */
   --color-soft-beach-muted-gray: #6b6b6b;
   --color-soft-beach-bright-coral: #ff6b6b;
@@ -16,7 +16,7 @@
   --color-white: #ffffff;
   --color-white-smoke: #f5f5f5;
   --color-white-border: #e0e0e0;
-  
+
   /* Theme Colors Mapping */
   --background: #edf7f6;
   --foreground: #2c2c2c;
@@ -37,7 +37,7 @@
   --border: #e0e0e0;
   --input: #ffffff;
   --ring: #51e2f5;
-  
+
   /* Container Specific Variables */
   --container-bg: #ffffff;
   --container-border: #e0e0e0;
@@ -46,19 +46,19 @@
   --container-shadow-active: 0 1px 4px rgba(162, 128, 137, 0.12);
   --container-radius: 1rem;
   --container-padding: 1.5rem;
-  
+
   /* Typography */
-  --font-sans: 'Inter', 'Roboto', sans-serif;
-  --font-serif: 'Merriweather', serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  
+  --font-sans: "Inter", "Roboto", sans-serif;
+  --font-serif: "Merriweather", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
   /* Border Radius */
   --radius: 1rem;
   --radius-sm: 0.75rem;
   --radius-md: 1rem;
   --radius-lg: 1.25rem;
   --radius-xl: 1.5rem;
-  
+
   /* Shadows */
   --shadow-2xs: 0 1px 2px 0 rgba(162, 128, 137, 0.05);
   --shadow-xs: 0 2px 4px 0 rgba(162, 128, 137, 0.06);
@@ -68,14 +68,14 @@
   --shadow-lg: 0 12px 32px rgba(162, 128, 137, 0.18);
   --shadow-xl: 0 16px 48px rgba(162, 128, 137, 0.2);
   --shadow-2xl: 0 24px 64px rgba(162, 128, 137, 0.25);
-  
+
   /* Focus States */
   --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.4);
   --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.4);
-  
+
   /* Spacing */
   --spacing: 0.25rem;
-  
+
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
@@ -137,7 +137,11 @@
 .container-image-overlay {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%) !important;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  ) !important;
   opacity: 0 !important;
   transition: opacity var(--transition-base) !important;
 }
@@ -300,14 +304,23 @@
 
 /* Loading Skeleton */
 .skeleton {
-  background: linear-gradient(90deg, var(--muted) 25%, var(--accent) 50%, var(--muted) 75%) !important;
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    var(--accent) 50%,
+    var(--muted) 75%
+  ) !important;
   background-size: 200% 100% !important;
   animation: loading 1.5s infinite !important;
 }
 
 @keyframes loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /* Responsive */
@@ -315,7 +328,7 @@
   .container-horizontal {
     flex-direction: column !important;
   }
-  
+
   .container-horizontal .container-image-wrapper {
     width: 100% !important;
     height: 200px !important;
@@ -345,40 +358,49 @@
     --border: #3e3e42;
     --input: #2c2c2c;
     --ring: #51e2f5;
-    
+
     /* Dark Container Specific */
     --container-bg: #2c2c2c;
     --container-border: #3e3e42;
     --container-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     --container-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
     --container-shadow-active: 0 1px 4px rgba(0, 0, 0, 0.2);
-    
+
     /* Dark Focus States */
     --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.6);
     --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.6);
   }
-  
+
   /* Dark Theme Specific Overrides */
   .container-image-overlay {
-    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%) !important;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ) !important;
   }
-  
+
   .container-tag {
     background: rgba(157, 249, 239, 0.2) !important;
     color: var(--accent) !important;
   }
-  
+
   .container-tag:hover {
     background: rgba(81, 226, 245, 0.3) !important;
     color: var(--primary) !important;
   }
-  
+
   .ripple-effect {
     background: rgba(81, 226, 245, 0.4) !important;
   }
-  
+
   .skeleton {
-    background: linear-gradient(90deg, var(--muted) 25%, rgba(157, 249, 239, 0.3) 50%, var(--muted) 75%) !important;
+    background: linear-gradient(
+      90deg,
+      var(--muted) 25%,
+      rgba(157, 249, 239, 0.3) 50%,
+      var(--muted) 75%
+    ) !important;
   }
 }
 
@@ -404,21 +426,25 @@
   --border: #3e3e42 !important;
   --input: #2c2c2c !important;
   --ring: #51e2f5 !important;
-  
+
   /* Dark Container Specific */
   --container-bg: #2c2c2c !important;
   --container-border: #3e3e42 !important;
   --container-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
   --container-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   --container-shadow-active: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
-  
+
   /* Dark Focus States */
   --shadow-focus: 0 0 0 3px rgba(81, 226, 245, 0.6) !important;
   --shadow-focus-secondary: 0 0 0 3px rgba(255, 168, 182, 0.6) !important;
 }
 
 .dark .container-image-overlay {
-  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%) !important;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  ) !important;
 }
 
 .dark .container-tag {
@@ -436,5 +462,10 @@
 }
 
 .dark .skeleton {
-  background: linear-gradient(90deg, var(--muted) 25%, rgba(157, 249, 239, 0.3) 50%, var(--muted) 75%) !important;
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    rgba(157, 249, 239, 0.3) 50%,
+    var(--muted) 75%
+  ) !important;
 }

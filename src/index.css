@@ -38,6 +38,9 @@
   --shadow-focus-bright-blue: 0 0 0 3px rgba(81, 226, 245, 0.5);
   --shadow-focus-soft-pink: 0 0 0 3px rgba(255, 168, 182, 0.5);
 
+  --shadow-pastel-rose: 0 8px 24px rgba(162, 128, 137, 0.15);
+  --shadow-pastel-rose-active: 0 1px 4px rgba(162, 128, 137, 0.12);
+
   --shadow-focus: var(--shadow-focus-bright-blue);
   --shadow-focus-secondary: var(--shadow-focus-soft-pink);
 
