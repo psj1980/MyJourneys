@@ -30,10 +30,26 @@ export default function Tag({
           dark:bg-theme-two/20 dark:text-theme-two 
           dark:hover:bg-soft-beach-bright-blue/30 dark:hover:text-soft-beach-bright-blue`
         }
-        ${variant === "secondary" && "bg-gray-100 text-gray-800 hover:bg-gray-200"}
-        ${variant === "success" && "bg-green-100 text-green-800 hover:bg-green-200"}
-        ${variant === "warning" && "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"}
-        ${variant === "danger" && "bg-red-100 text-red-800 hover:bg-red-200"}
+        ${
+          variant === "secondary" &&
+          `bg-gray-100 text-gray-800 hover:bg-gray-200
+          dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600`
+        }
+        ${
+          variant === "success" &&
+          `bg-green-100 text-green-800 hover:bg-green-200
+          dark:bg-green-900 dark:text-green-300 dark:hover:bg-green-800`
+        }
+        ${
+          variant === "warning" &&
+          `bg-yellow-100 text-yellow-800 hover:bg-yellow-200
+          dark:bg-yellow-900 dark:text-yellow-300 dark:hover:bg-yellow-800`
+        }
+        ${
+          variant === "danger" &&
+          `bg-red-100 text-red-800 hover:bg-red-200
+          dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800`
+        }
     `}
     >
       {children}
