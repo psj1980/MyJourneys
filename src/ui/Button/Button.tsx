@@ -26,8 +26,7 @@ const buttonSharedStyles = `
         active:translate-y-0
         active:before:w-[300px] active:before:h-[300px]
         hover:-translate-y-0.5
-        disabled:translate-y-0
-        `;
+        disabled:translate-y-0`;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: `dark:bg-none dark:bg-[oklch(0.922_0_0)] dark:text-[oklch(0.205 0 0)]
@@ -52,8 +51,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   px-4 py-2 bg-theme-one text-foreground-dark border
             transition-all duration-150 ease-in border-0 font-sans
             hover:bg-theme-two hover:translate-x-[2px]
-            disabled:translate-x-0
-        `,
+            disabled:translate-x-0`,
 };
 
 const sizeStyles: Record<Size, string> = {
@@ -105,10 +103,3 @@ export default function Button({
     </ReactAriaButton>
   );
 }
-
-// <button
-//   className={`
-//             px-4 py-2 bg-theme-one text-foreground-dark border rounded-xl font-medium
-//             transition-all duration-150 ease-in border-0 cursor-pointer font-sans
-//             hover:bg-theme-two hover:translate-x-[2px]`}
-// ></button>;
