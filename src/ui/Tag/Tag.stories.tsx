@@ -1,88 +1,57 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Tag from "./Tag";
 import {
   IconMoodAngry,
+  IconMoodAngryFilled,
+  IconMoodAnnoyed2,
+  IconMoodHappy,
   IconMoodSad,
   IconUmbrella,
   IconWalk,
 } from "@tabler/icons-react";
+import Tag from "./Tag";
 import TagGroup from "./TagGroup";
 
-const meta: Meta<typeof Tag> = {
+const meta: Meta<typeof TagGroup> = {
   title: "UI/Components/Tag",
-  component: Tag,
+  component: TagGroup,
   argTypes: {
-    variant: {
+    alignment: {
       description: "Button variant",
       control: { type: "radio" },
-      options: ["primary", "secondary", "success", "warning", "danger"],
+      options: ["left", "center", "right"],
     },
   },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Tag>;
+type Story = StoryObj<typeof TagGroup>;
 
-export const Default: Story = {
-  args: {
-    children: (
-      <>
-        <IconUmbrella className="w-3 h-3" />
-        Beach
-      </>
-    ),
-  },
-};
-
-export const TagGroupExample: Story = {
-  render: () => (
-    <TagGroup alignment="left">
-      <Tag variant="primary">
-        <IconUmbrella className="w-3 h-3 mr-1" />
-        Beach
-      </Tag>
-      <Tag variant="success">
-        <IconWalk className="w-3 h-3 mr-1" />
-        Hiking
-      </Tag>
-      <Tag variant="warning">
-        <IconMoodAngry className="w-3 h-3 mr-1" />
-        City
-      </Tag>
-      <Tag variant="danger">
-        <IconMoodSad className="w-3 h-3 mr-1" />
-        Crowded
-      </Tag>
-      <Tag variant="secondary">
-        <IconUmbrella className="w-3 h-3 mr-1" />
-        Rainy
-      </Tag>
-    </TagGroup>
-  ),
-};
-
-export const TagGroupCenterExample: Story = {
-  render: () => (
-    <div className="w-200 mx-auto">
-      <TagGroup alignment="center">
-        <Tag variant="primary">
+export const DefaultExample: Story = {
+  render: (args) => (
+    <div className="w-[80vw] mx-auto">
+      <TagGroup
+        label="Hejsa"
+        {...args}
+        aria-label="Group of tags Default example"
+      >
+        <Tag variant="primary" textValue="Beach">
           <IconUmbrella className="w-3 h-3 mr-1" />
           Beach
         </Tag>
-        <Tag variant="success">
+        <Tag variant="primary" textValue="Hiking">
           <IconWalk className="w-3 h-3 mr-1" />
           Hiking
         </Tag>
-        <Tag variant="warning">
+        <Tag variant="primary" textValue="City">
           <IconMoodAngry className="w-3 h-3 mr-1" />
           City
         </Tag>
-        <Tag variant="danger">
+        <Tag variant="primary" textValue="Crowded">
           <IconMoodSad className="w-3 h-3 mr-1" />
           Crowded
         </Tag>
-        <Tag variant="secondary">
+        <Tag variant="primary" textValue="Rainy">
           <IconUmbrella className="w-3 h-3 mr-1" />
           Rainy
         </Tag>
@@ -91,58 +60,87 @@ export const TagGroupCenterExample: Story = {
   ),
 };
 
-export const TagGroupLeftExample: Story = {
-  render: () => (
-    <div className="w-200 mx-auto">
-      <TagGroup alignment="left">
-        <Tag variant="primary">
+export const TagGroupAllTagsSmallExample: Story = {
+  render: (args) => (
+    <div className="w-[80vw] mx-auto">
+      <TagGroup {...args} aria-label="Group of tags Small example">
+        <Tag variant="primary" size="small" textValue="Beach">
           <IconUmbrella className="w-3 h-3 mr-1" />
           Beach
         </Tag>
-        <Tag variant="success">
-          <IconWalk className="w-3 h-3 mr-1" />
-          Hiking
-        </Tag>
-        <Tag variant="warning">
-          <IconMoodAngry className="w-3 h-3 mr-1" />
-          City
-        </Tag>
-        <Tag variant="danger">
-          <IconMoodSad className="w-3 h-3 mr-1" />
-          Crowded
-        </Tag>
-        <Tag variant="secondary">
+        <Tag variant="secondary" size="small" textValue="Rainy">
           <IconUmbrella className="w-3 h-3 mr-1" />
           Rainy
+        </Tag>
+        <Tag variant="success" size="small" textValue="Success">
+          <IconMoodHappy className="w-3 h-3 mr-1" />
+          Success
+        </Tag>
+        <Tag variant="warning" size="small" textValue="Warning">
+          <IconMoodAnnoyed2 className="w-3 h-3 mr-1" />
+          Warning
+        </Tag>
+        <Tag variant="danger" size="small" textValue="Danger">
+          <IconMoodAngryFilled className="w-3 h-3 mr-1" />
+          Danger
         </Tag>
       </TagGroup>
     </div>
   ),
 };
 
-export const TagGroupRightExample: Story = {
-  render: () => (
-    <div className="w-200 mx-auto">
-      <TagGroup alignment="right">
-        <Tag variant="primary">
+export const TagGroupAllTagsMediumExample: Story = {
+  render: (args) => (
+    <div className="w-[80vw] mx-auto">
+      <TagGroup {...args} aria-label="Group of tags Medium example">
+        <Tag variant="primary" size="medium" textValue="Beach">
           <IconUmbrella className="w-3 h-3 mr-1" />
           Beach
         </Tag>
-        <Tag variant="success">
-          <IconWalk className="w-3 h-3 mr-1" />
-          Hiking
-        </Tag>
-        <Tag variant="warning">
-          <IconMoodAngry className="w-3 h-3 mr-1" />
-          City
-        </Tag>
-        <Tag variant="danger">
-          <IconMoodSad className="w-3 h-3 mr-1" />
-          Crowded
-        </Tag>
-        <Tag variant="secondary">
+        <Tag variant="secondary" size="medium" textValue="Rainy">
           <IconUmbrella className="w-3 h-3 mr-1" />
           Rainy
+        </Tag>
+        <Tag variant="success" size="medium" textValue="Success">
+          <IconMoodHappy className="w-3 h-3 mr-1" />
+          Success
+        </Tag>
+        <Tag variant="warning" size="medium" textValue="Warning">
+          <IconMoodAnnoyed2 className="w-3 h-3 mr-1" />
+          Warning
+        </Tag>
+        <Tag variant="danger" size="medium" textValue="Danger">
+          <IconMoodAngryFilled className="w-3 h-3 mr-1" />
+          Danger
+        </Tag>
+      </TagGroup>
+    </div>
+  ),
+};
+
+export const TagGroupAllTagsLargeExample: Story = {
+  render: (args) => (
+    <div className="w-[80vw] mx-auto">
+      <TagGroup {...args} aria-label="Group of tags Large example">
+        <Tag variant="primary" size="large" textValue="Beach">
+          <IconUmbrella className="w-3 h-3 mr-1" />
+          Beach
+        </Tag>
+        <Tag variant="secondary" size="large" textValue="Rainy">
+          <IconUmbrella className="w-3 h-3 mr-1" />
+          Rainy
+        </Tag>
+        <Tag variant="success" size="large" textValue="Success">
+          <IconMoodHappy className="w-3 h-3 mr-1" />
+          Success
+        </Tag>
+        <Tag variant="warning" size="large" textValue="Warning">
+          <IconMoodAnnoyed2 className="w-3 h-3 mr-1" />
+          Warning
+        </Tag>
+        <Tag variant="danger" size="large" textValue="Danger">
+          <IconMoodAngryFilled className="w-3 h-3 mr-1" />
+          Danger
         </Tag>
       </TagGroup>
     </div>

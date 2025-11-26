@@ -1,31 +1,69 @@
+import {
+  TagGroup as TagGroupAria,
+  TagList as TagListAria,
+  type TagGroupProps as TagGroupAriaProps,
+  type TagListProps as TagListAriaProps,
+} from "react-aria-components";
 import type { Alignment } from "../../types/component";
+import Label from "../Label/Label";
 
-type TagGroupProps = {
+type TagGroupProps = Omit<TagGroupAriaProps, "children"> & {
   alignment?: Alignment;
+  label?: string;
   children: React.ReactNode;
 };
 
 /**
  * A container component that arranges Tag components in a horizontal group with spacing.
  *
- * @param alignment - The alignment of the tags within the group.
+ * @param alignment - 'left' | 'center' | 'right'. Default is 'left'.
  *
- * @param alignment - 'left' | 'center' | 'right'. Default is 'right'.
+ * @param label - The accessible label for the tag group.
  *
  * @param children - The Tag components to be displayed inside the group.
  *
  * @returns A React component that renders a horizontal group of tags.
  */
 export default function TagGroup({
-  alignment = "right",
+  alignment = "left",
+  label,
   children,
+  ...rest
 }: Readonly<TagGroupProps>) {
-  const alignmentClass = `
-    ${alignment === "left" ? "justify-start" : ""}
-    ${alignment === "center" ? "justify-center" : ""}
-    ${alignment === "right" ? "justify-end" : ""}`;
+  let alignmentClass = "items-start";
+  if (alignment === "center") alignmentClass = "items-center";
+  if (alignment === "right") alignmentClass = "items-end";
 
   return (
-    <div className={`flex flex-wrap gap-2 ${alignmentClass}`}>{children}</div>
+    <TagGroupAria className="mb-4 w-full" {...rest}>
+      <div className={`flex flex-col gap-1 w-full ${alignmentClass}`}>
+        {label && <Label>{label}</Label>}
+        <TagList {...rest}>{children}</TagList>
+      </div>
+    </TagGroupAria>
+  );
+}
+
+type TagListProps<T extends object> = Omit<TagListAriaProps<T>, "children"> & {
+  children: React.ReactNode;
+};
+
+/**
+ * TagList component for grouping Tag items.
+ *
+ * @template T - The type of items in the tag list.
+ *
+ * @param children - The Tag components to be displayed inside the list.
+ *
+ * @returns A React component that renders a list of tags.
+ */
+function TagList<T extends object>({
+  children,
+  ...rest
+}: Readonly<TagListProps<T>>) {
+  return (
+    <TagListAria className={`flex flex-wrap gap-2 `} {...rest}>
+      {children}
+    </TagListAria>
   );
 }

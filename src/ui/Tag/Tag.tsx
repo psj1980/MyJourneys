@@ -1,8 +1,15 @@
+import {
+  Tag as TagAria,
+  type TagProps as TagAriaProps,
+} from "react-aria-components";
+import type { Size } from "../../types/component";
+
 type Variant = "primary" | "secondary" | "success" | "warning" | "danger";
 
-type TagProps = {
-  variant: Variant;
-  children?: React.ReactNode;
+type TagProps = Omit<TagAriaProps, "children"> & {
+  size?: Size;
+  variant?: Variant;
+  children: React.ReactNode;
 };
 
 /**
@@ -15,15 +22,23 @@ type TagProps = {
  * @returns A React component that renders a styled tag.
  */
 export default function Tag({
-  children,
+  size = "medium",
   variant = "primary",
+  children,
+  ...rest
 }: Readonly<TagProps>) {
+  const textSize = `
+  ${size === "small" && "text-xs rounded-xl"}
+  ${size === "medium" && "text-sm rounded-2xl"} 
+  ${size === "large" && "text-md rounded-3xl"}`;
+
   return (
-    <span
+    <TagAria
       className={`
         inline-flex items-center gap-1 px-3 py-1  
-        rounded-xl text-xs font-medium transition-all duration-150
+        ${textSize} font-medium transition-all duration-150
         hover:-translate-y-px
+        selected:bg-theme-one selected:text-foreground-dark
         ${
           variant === "primary" &&
           `bg-theme-two text-foreground-dark hover:bg-theme-one 
@@ -51,8 +66,9 @@ export default function Tag({
           dark:bg-red-900 dark:text-red-300 dark:hover:bg-red-800`
         }
     `}
+      {...rest}
     >
       {children}
-    </span>
+    </TagAria>
   );
 }
