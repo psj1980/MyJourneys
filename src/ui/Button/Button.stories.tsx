@@ -9,7 +9,7 @@ const meta = {
     variant: {
       description: "Button variant",
       control: { type: "radio" },
-      options: ["primary", "secondary", "outline"],
+      options: ["primary", "secondary", "outline", "details"],
     },
     size: {
       description: "Button size",
