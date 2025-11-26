@@ -46,9 +46,8 @@ const variantStyles: Record<ButtonVariant, string> = {
             hover:bg-theme-one hover:text-black-soft hover:shadow-sm
             disabled:hover:shadow-sm
             focus:shadow-focus active:shadow-none`,
-  details: `
-  inline-flex items-center justify-center position-relative overflow-hidden 
-  px-4 py-2 bg-theme-one text-foreground-dark border
+  details: `inline-flex items-center justify-center position-relative overflow-hidden 
+            px-4 py-2 bg-soft-beach-bright-blue text-foreground-dark border
             transition-all duration-150 ease-in border-0 font-sans
             hover:bg-theme-two hover:translate-x-[2px]
             disabled:translate-x-0`,
